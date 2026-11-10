@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nikhil George Oommen – Senior iOS Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f8fb; --card:#ffffff; --ink:#1f2933; --muted:#5a6575; --head:#0f2342;
+  --teal:#066b63; --teal-bright:#2dd4bf; --tint:#e6f5f2; --line:#d6e6e8;
+  --side:#0f2342; --side-ink:#dde6f3;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0b1424; --card:#111d33; --ink:#e3e9f2; --muted:#9aa8bd; --head:#f2f6fb;
+    --teal:#4fd9c7; --tint:#12302f; --line:#223452; --side:#0a1a33; --side-ink:#dde6f3;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0b1424; --card:#111d33; --ink:#e3e9f2; --muted:#9aa8bd; --head:#f2f6fb;
+  --teal:#4fd9c7; --tint:#12302f; --line:#223452; --side:#0a1a33; --side-ink:#dde6f3;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:16px;line-height:1.6;overflow-wrap:anywhere;-webkit-font-smoothing:antialiased}
+a{color:var(--teal);text-decoration:none;font-weight:600}
+a:hover,a:focus-visible{text-decoration:underline}
+header{background:linear-gradient(120deg,#0f2342 0%,#0c4f6b 55%,#0b6b73 100%);color:#fff;
+  padding:clamp(1.6rem,5vw,3rem) clamp(1.1rem,5vw,3rem);border-bottom:4px solid var(--teal-bright)}
+.wrap{max-width:1120px;margin:0 auto}
+h1{margin:0;font-size:clamp(1.8rem,6.2vw,2.9rem);line-height:1.1;font-weight:800;letter-spacing:.01em}
+.role{margin:.55rem 0 0;color:#8ff0e0;font-weight:600;font-size:clamp(1rem,3vw,1.2rem)}
+.contact{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;margin:1.1rem 0 0;padding:0;list-style:none;font-size:.95rem}
+.contact a{color:#bff5ec;font-weight:500}
+.btn{margin-top:1.1rem;background:transparent;color:#fff;border:1.5px solid #5fd6c6;border-radius:999px;
+  padding:.5rem 1.1rem;font:inherit;font-size:.9rem;font-weight:600;cursor:pointer}
+.btn:hover{background:rgba(255,255,255,.12)}
+main.layout{max-width:1120px;margin:0 auto;padding:clamp(1rem,3vw,2rem) clamp(1rem,4vw,2rem) 3rem;
+  display:grid;gap:1.4rem;grid-template-columns:1fr;
+  grid-template-areas:"main" "side"}
+.main{grid-area:main;min-width:0}
+.side{grid-area:side;min-width:0}
+@media (min-width:900px){
+  main.layout{grid-template-columns:310px 1fr;grid-template-areas:"side main";gap:2rem;align-items:start}
+  .side{position:sticky;top:1rem}
+}
+section{margin:0 0 1.9rem}
+h2{display:flex;align-items:center;gap:.6rem;margin:0 0 .9rem;font-size:1.05rem;font-weight:800;
+  letter-spacing:.07em;text-transform:uppercase;color:var(--head)}
+h2::before{content:"";width:.7rem;height:.7rem;border-radius:3px;background:var(--teal-bright);flex:none}
+h2::after{content:"";height:2px;flex:1;background:var(--line)}
+.summary{background:var(--tint);border-left:4px solid var(--teal-bright);border-radius:10px;padding:1rem 1.2rem;margin:0}
+.employer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.2rem 1rem;align-items:baseline}
+.employer h3{margin:0;font-size:1.1rem;font-weight:700;color:var(--head)}
+.dates{font-size:.85rem;font-weight:600;color:var(--muted);white-space:nowrap}
+.sub{margin:.1rem 0 .6rem;color:var(--teal);font-style:italic;font-size:.93rem}
+.role-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.1rem 1rem;margin:.8rem 0 .2rem}
+.role-row h4{margin:0;font-size:1rem;font-weight:700;color:var(--head)}
+ul.b{margin:.2rem 0 1rem;padding-left:1.2rem}
+ul.b li{margin:.3rem 0}
+.job{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1.1rem 1.25rem;margin-bottom:1rem}
+.job ul.b:last-child{margin-bottom:.2rem}
+.proj{margin:0 0 1.15rem}
+.proj h3{margin:0;font-size:1.02rem;font-weight:700;color:var(--head)}
+.stack{margin:.1rem 0 .3rem;color:var(--teal);font-size:.85rem;font-weight:500}
+.proj p{margin:0}
+.side .card{background:var(--side);color:var(--side-ink);border-radius:14px;padding:1.3rem 1.3rem 1.1rem}
+.side h2{color:#2dd4bf;font-size:.9rem}
+.side h2::after{background:rgba(45,212,191,.45)}
+.side h4{margin:.9rem 0 .15rem;color:#fff;font-size:.95rem;font-weight:700}
+.side h4:first-of-type{margin-top:0}
+.side p{margin:0 0 .3rem;font-size:.93rem;line-height:1.55}
+.side section{margin-bottom:1.4rem}
+.side section:last-child{margin-bottom:0}
+.yr{color:#2dd4bf;font-weight:600}
+.apps{margin:0}
+footer{max-width:1120px;margin:0 auto;padding:0 1rem 2rem;color:var(--muted);font-size:.8rem;text-align:center}
+@media (max-width:480px){.job{padding:1rem}.dates{white-space:normal}}
+@media print{
+  :root{padding:0}
+  body{background:#fff;color:#000;font-size:10.5pt;line-height:1.45}
+  .btn,footer{display:none}
+  header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .side{position:static}.job,.proj{break-inside:avoid}
+  .side .card{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>Nikhil George Oommen</h1>
+    <p class="role">Senior iOS Developer (Swift / SwiftUI) &nbsp;|&nbsp; Flutter &amp; React Native</p>
+    <ul class="contact">
+      <li>Kerala, India</li>
+      <li><a href="tel:+919496410914">+91 94964 10914</a></li>
+      <li><a href="mailto:nikhilgeorgeoommen@gmail.com">nikhilgeorgeoommen@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/nikhilgeorgeoommen" rel="noopener">linkedin.com/in/nikhilgeorgeoommen</a></li>
+    </ul>
+    <button class="btn" onclick="window.print()">Print / Save as PDF</button>
+  </div>
+</header>
+
+<main class="layout">
+<div class="main">
+
+<section>
+  <h2>Professional Summary</h2>
+  <p class="summary">Senior iOS Developer with 11+ years of experience building and releasing native iOS apps, with 50+ apps delivered to the App Store for clients across India, the US, Europe, the Middle East and Australia. Has led an 11-member iOS team. Strong in Swift, SwiftUI and Objective-C, with hands-on experience in BLE/IoT, geofencing and location features, payment integrations, Objective-C-to-Swift migration and Fastlane CI/CD. Also experienced in Flutter, React Native and AI-assisted development.</p>
+</section>
+
+<section>
+  <h2>Professional Experience</h2>
+
+  <div class="job">
+    <div class="employer"><h3>Sinergia Media Labs (Simelabs)</h3><span class="dates">Aug 2020 – Jun 2026</span></div>
+    <p class="sub">An Astek Company, Kochi | includes GoodBits Tech (merged)</p>
+    <div class="role-row"><h4>Senior iOS Developer &amp; Technology Analyst</h4><span class="dates">Mar 2023 – Jun 2026</span></div>
+    <ul class="b">
+      <li>Independently owned and delivered the iOS app for LiveLaw, a leading legal news app in India: migrated its Objective-C codebase to Swift/SwiftUI and built saved articles with Core Data.</li>
+      <li>Built news feeds with mixed media, prefetching, audio playback, analytics and push notifications.</li>
+      <li>Designed scalable iOS architectures (MVVM, Clean Architecture) for iPhone and iPad across multiple client products.</li>
+      <li>Built Flutter and React Native apps, including Hugo and Nuevo.</li>
+      <li>Automated build and release pipelines with Fastlane, supporting CI/CD and App Store submissions.</li>
+    </ul>
+    <div class="role-row"><h4>Senior iOS Developer</h4><span class="dates">Aug 2020 – Mar 2023</span></div>
+    <ul class="b">
+      <li>Independently developed Bloom, a bike and e-scooter sharing app with BLE unlocking and multi-rental IoT support.</li>
+      <li>Implemented Core Location features: vehicle discovery, geofenced riding zones, parking stations and reservations.</li>
+      <li>Integrated numerous Bluetooth bike and asset devices, Stripe, Apple Pay, HyperPay and Firebase.</li>
+      <li>Automated builds with Fastlane and supported App Store releases.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="employer"><h3>iOS Developer</h3><span class="dates">Jul 2016 – Jul 2020</span></div>
+    <p class="sub">Caxita Tech Solutions Pvt Ltd, Kochi</p>
+    <ul class="b">
+      <li>Led and coordinated an 11-member iOS development team, providing technical guidance and overseeing delivery.</li>
+      <li>Developed and delivered 20+ native iOS apps in Swift and Objective-C, from requirements to App Store release.</li>
+      <li>Managed the full lifecycle of QGO, a travel booking app, including multi-language and multi-region localisation.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="employer"><h3>iOS Developer</h3><span class="dates">Jan 2015 – Apr 2016</span></div>
+    <p class="sub">Ovoid Studios (Kerala Startup Mission), Kochi</p>
+    <ul class="b">
+      <li>Built adaptive UI frameworks for all iPhone and iPad screens.</li>
+      <li>Worked on interfaces for iOS, Android and web at a game startup.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Key Projects</h2>
+  <div class="proj">
+    <h3>Bloom: BLE &amp; IoT Rental Management App</h3>
+    <p class="stack">Swift 5 | Core Bluetooth | Core Location | Firebase | Google Maps | <a href="https://apps.apple.com/us/app/bloom-share-bikes-evs-more/id6736392137" rel="noopener">View on App Store →</a></p>
+    <p>Sole iOS developer. Bike and e-scooter sharing app rated 4.9 on the App Store (1.7K ratings) and available in 14 languages: BLE and IoT unlocking, multi-rental support, geofenced zones, parking stations, reservations, payments and push notifications, with numerous Bluetooth bike and asset devices supported.</p>
+  </div>
+  <div class="proj">
+    <h3>LiveLaw: Legal News App</h3>
+    <p class="stack">Swift | SwiftUI | Core Data | Firebase | WebEngage | <a href="https://apps.apple.com/us/app/livelaw/id910652359" rel="noopener">View on App Store →</a></p>
+    <p>Sole iOS developer on a leading legal news app in India (iPhone and iPad): migrated the legacy Objective-C codebase to Swift, built a modern iPad experience, and added saved articles (Core Data), audio playback, analytics and push notifications.</p>
+  </div>
+  <div class="proj">
+    <h3>Hugo: Telehealth Platform</h3>
+    <p class="stack">React Native | TypeScript | Redux | WebRTC | VideoSDK</p>
+    <p>Video consultations, e-prescriptions and ordering, with real-time audio/video, biometric authentication, secure storage and offline support.</p>
+  </div>
+  <div class="proj">
+    <h3>Nuevo: Health &amp; Wellness App</h3>
+    <p class="stack">Flutter | Dart | Riverpod | Dio | GoRouter | Mockito</p>
+    <p>Scalable Clean Architecture app with Riverpod state management, REST APIs and unit-tested code.</p>
+  </div>
+  <div class="proj">
+    <h3>Travel Booking Apps: Flights, Hotels &amp; Holiday Packages</h3>
+    <p class="stack">Swift | REST APIs | Localisation | <a href="https://apps.apple.com/us/app/qgo-online/id1479411985" rel="noopener">View QGO on App Store →</a></p>
+    <p>Built and shipped iOS apps for flight, hotel and holiday package booking, including QGO, with search and filters, traveller details flows, booking management and multi-language, multi-region support.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Additional Apps Delivered</h2>
+  <p class="apps">Drift Cycle, Toodle, Bee Mobile, RHLTK, Laffah, FlashNgo, Gate 15, Umrah, CityBookers, Ejazza, ITBoarding, Fly TVs, Otolat, Fuuf, TravelQ8, Exlgo, Viaggisky, Musafren, Booking Kuwait, ETKTNOW, FlyBooking, Byengo, Re7lah, Metrip, Hinfly.</p>
+</section>
+
+</div>
+
+<aside class="side">
+  <div class="card">
+    <section>
+      <h2>Technical Skills</h2>
+      <h4>iOS Development</h4><p>Swift, SwiftUI, UIKit, Objective-C, Cocoa Touch, async/await, Core Data, Push Notifications, Localisation, iPhone &amp; iPad UI</p>
+      <h4>Architecture &amp; Testing</h4><p>MVVM, Clean Architecture, REST APIs, Legacy Code Migration, Unit &amp; Integration Testing, Performance Optimisation</p>
+      <h4>Integrations &amp; SDKs</h4><p>Stripe, Apple Pay, HyperPay, Firebase, Google Maps, WebRTC, VideoSDK, AppsFlyer, WebEngage, Alamofire</p>
+      <h4>BLE, IoT &amp; Location</h4><p>Core Bluetooth (BLE), Core Location, IoT Integration, GPS / Location Services, Geofencing</p>
+      <h4>Cross-Platform</h4><p>Flutter, Dart, Riverpod, React Native, TypeScript, Redux</p>
+      <h4>Tools &amp; CI/CD</h4><p>Xcode, Fastlane, TestFlight, App Store Connect, Git, Bitbucket, Postman, Android Studio, VS Code, AI-Assisted Development, Prompt Engineering</p>
+    </section>
+    <section>
+      <h2>Education</h2>
+      <h4>B.Tech in Computer Science and Engineering</h4>
+      <p>College of Engineering, Adoor</p><p class="yr">2010 – 2014</p>
+    </section>
+    <section>
+      <h2>Languages</h2>
+      <p>English</p><p>Malayalam</p>
+    </section>
+  </div>
+</aside>
+</main>
+<footer>Nikhil George Oommen · Senior iOS Developer</footer>
+</body>
+</html>
