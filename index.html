@@ -16,13 +16,13 @@
 <meta property="og:title" content="Nikhil George Oommen – Senior iOS Developer">
 <meta property="og:description" content="Senior iOS Developer with 11+ years of experience and 50+ apps delivered. Swift, SwiftUI, Objective-C, Flutter, React Native, BLE/IoT. Based in Kerala, India.">
 <meta property="og:url" content="https://nikhiloommen.github.io/resume/">
-<meta property="og:image" content="https://nikhiloommen.github.io/resume/NGO.png">
+<meta property="og:image" content="https://nikhiloommen.github.io/resume/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Nikhil George Oommen – Senior iOS Developer">
 <meta name="twitter:description" content="Senior iOS Developer with 11+ years of experience and 50+ apps delivered. Swift, SwiftUI, Objective-C, Flutter, React Native, BLE/IoT. Based in Kerala, India.">
-<meta name="twitter:image" content="https://nikhiloommen.github.io/resume/NGO.png">
+<meta name="twitter:image" content="https://nikhiloommen.github.io/resume/og-image.jpg">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Nikhil George Oommen","jobTitle":"Senior iOS Developer","url":"https://nikhiloommen.github.io/resume/","email":"mailto:nikhilgeorgeoommen@gmail.com","telephone":"+91 94964 10914","address":{"@type":"PostalAddress","addressRegion":"Kerala","addressCountry":"IN"},"sameAs":["https://www.linkedin.com/in/nikhilgeorgeoommen"],"knowsAbout":["iOS development","Swift","SwiftUI","Objective-C","Flutter","React Native","Core Bluetooth","IoT","Fastlane"],"alumniOf":{"@type":"CollegeOrUniversity","name":"College of Engineering, Adoor"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -151,7 +151,15 @@ h1{font-size:clamp(2rem,7.4vw,3.7rem);letter-spacing:0}
   .bar a:first-child{background:#1de9d8;color:#03213a}
   body{padding-bottom:4.8rem}.tech{font-size:.92rem}
 }
+.side .grp{background:rgba(255,255,255,.05);border:1px solid rgba(45,212,191,.22);border-radius:12px;padding:.85rem .9rem .95rem;margin:0 0 .75rem;transition:border-color .2s,background .2s}
+.side .grp:hover{border-color:#1de9d8;background:rgba(29,233,216,.07)}
+.side .grp h4{display:flex;align-items:center;gap:.65rem;margin:0 0 .65rem;color:#fff;font-size:.95rem;font-weight:700}
+.ico{width:2rem;height:2rem;flex:none;display:grid;place-items:center;border-radius:9px;background:linear-gradient(135deg,#1de9d8,#1b8fe8);color:#03213a;box-shadow:0 4px 12px rgba(29,233,216,.25)}
+.ico svg{width:1.15rem;height:1.15rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tags{display:flex;flex-wrap:wrap;gap:.35rem}
+.tags span{font-size:.83rem;font-weight:500;line-height:1.4;color:#e8f0fb;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);border-radius:7px;padding:.18rem .5rem}
 @media print{
+  .side .grp{padding:2mm;margin-bottom:2mm}.side .grp h4{font-size:8.6pt;margin-bottom:1.6mm;gap:2mm}.ico{width:5mm;height:5mm;border-radius:1.4mm;box-shadow:none}.ico svg{width:3mm;height:3mm}.tags{gap:1mm}.tags span{font-size:7.4pt;padding:.2mm 1.3mm}
   .art,.wave,.bar,.cta,.facts{display:none}
   @page{size:A4;margin:10mm}
   :root:root:root{--bg:#fff;--card:#fff;--ink:#1f2933;--muted:#5a6575;--head:#0f2342;--teal:#066b63;--tint:#e6f5f2;--line:#d6e6e8;--side:#0f2342;--side-ink:#dde6f3;padding:0}
@@ -291,12 +299,12 @@ h1{font-size:clamp(2rem,7.4vw,3.7rem);letter-spacing:0}
   <div class="card">
     <section>
       <h2>Technical Skills</h2><div class="skill-grid">
-      <div class="grp"><h4>iOS Development</h4><p>Swift, SwiftUI, UIKit, Objective-C, Cocoa Touch, async/await, Core Data, Push Notifications, Localisation, iPhone &amp; iPad UI</p></div>
-      <div class="grp"><h4>Architecture &amp; Testing</h4><p>MVVM, Clean Architecture, REST APIs, Legacy Code Migration, Unit &amp; Integration Testing, Performance Optimisation</p></div>
-      <div class="grp"><h4>Integrations &amp; SDKs</h4><p>Stripe, Apple Pay, HyperPay, Firebase, Google Maps, WebRTC, VideoSDK, AppsFlyer, WebEngage, Alamofire</p></div>
-      <div class="grp"><h4>BLE, IoT &amp; Location</h4><p>Core Bluetooth (BLE), Core Location, IoT Integration, GPS / Location Services, Geofencing</p></div>
-      <div class="grp"><h4>Cross-Platform</h4><p>Flutter, Dart, Riverpod, React Native, TypeScript, Redux</p></div>
-      <div class="grp"><h4>Tools &amp; CI/CD</h4><p>Xcode, Fastlane, TestFlight, App Store Connect, Git, Bitbucket, Postman, Android Studio, VS Code, AI-Assisted Development, Prompt Engineering</p></div>
+      <div class="grp"><h4><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg></span>iOS Development</h4><div class="tags"><span>Swift</span><span>SwiftUI</span><span>UIKit</span><span>Objective-C</span><span>Cocoa Touch</span><span>async/await</span><span>Core Data</span><span>Push Notifications</span><span>Localisation</span><span>iPhone &amp; iPad UI</span></div></div>
+      <div class="grp"><h4><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 2.5 7.5 12 12.5l9.5-5z"/><path d="m2.5 12 9.5 5 9.5-5"/><path d="m2.5 16.5 9.5 5 9.5-5"/></svg></span>Architecture &amp; Testing</h4><div class="tags"><span>MVVM</span><span>Clean Architecture</span><span>REST APIs</span><span>Legacy Code Migration</span><span>Unit &amp; Integration Testing</span><span>Performance Optimisation</span></div></div>
+      <div class="grp"><h4><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13.5a4.5 4.5 0 0 0 6.4.4l3-3a4.5 4.5 0 0 0-6.4-6.4l-1.2 1.2"/><path d="M14 10.5a4.5 4.5 0 0 0-6.4-.4l-3 3a4.5 4.5 0 0 0 6.4 6.4l1.2-1.2"/></svg></span>Integrations &amp; SDKs</h4><div class="tags"><span>Stripe</span><span>Apple Pay</span><span>HyperPay</span><span>Firebase</span><span>Google Maps</span><span>WebRTC</span><span>VideoSDK</span><span>AppsFlyer</span><span>WebEngage</span><span>Alamofire</span></div></div>
+      <div class="grp"><h4><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6.5 7 11 10-5.5 5V2l5.5 5-11 10"/></svg></span>BLE, IoT &amp; Location</h4><div class="tags"><span>Core Bluetooth (BLE)</span><span>Core Location</span><span>IoT Integration</span><span>GPS / Location Services</span><span>Geofencing</span></div></div>
+      <div class="grp"><h4><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="13" height="9.5" rx="1.6"/><rect x="14" y="9.5" width="7.5" height="12" rx="1.6"/></svg></span>Cross-Platform</h4><div class="tags"><span>Flutter</span><span>Dart</span><span>Riverpod</span><span>React Native</span><span>TypeScript</span><span>Redux</span></div></div>
+      <div class="grp"><h4><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 17 6-6-6-6"/><path d="M12.5 19.5H20"/></svg></span>Tools &amp; CI/CD</h4><div class="tags"><span>Xcode</span><span>Fastlane</span><span>TestFlight</span><span>App Store Connect</span><span>Git</span><span>Bitbucket</span><span>Postman</span><span>Android Studio</span><span>VS Code</span><span>AI-Assisted Development</span><span>Prompt Engineering</span></div></div>
     </div></section>
     <section>
       <h2>Education</h2>
