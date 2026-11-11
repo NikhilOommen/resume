@@ -159,9 +159,30 @@ h1{font-size:clamp(2rem,7.4vw,3.7rem);letter-spacing:0}
 .tags{display:flex;flex-wrap:wrap;gap:.35rem}
 .tags span{font-size:.83rem;font-weight:500;line-height:1.4;color:#e8f0fb;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);border-radius:7px;padding:.18rem .5rem}
 
-/* Readability tweaks */
-.contact a{color:#b8fff6;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(184,255,246,.5)}
-h1{font-size:clamp(1.9rem,6.6vw,3.4rem)}
+/* Screen-only polish (does not affect print / PDF) */
+@media screen{
+  h1{font-size:clamp(1.9rem,6.6vw,3.4rem);text-wrap:balance}
+  .role2{max-width:38rem}
+  .contact{gap:.6rem;margin-top:1.3rem}
+  .contact a{display:inline-flex;align-items:center;min-height:40px;padding:.35rem .95rem;border-radius:999px;
+    background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#e9fffb;text-decoration:none;
+    font-weight:500;font-size:.92rem;transition:background .2s,border-color .2s}
+  .contact a:hover,.contact a:focus-visible{background:rgba(29,233,216,.16);border-color:#1de9d8;text-decoration:none}
+  .cta .btn{min-height:48px;padding:.6rem 1.5rem;font-size:.95rem}
+  .btn.primary{box-shadow:0 6px 18px rgba(29,233,216,.25)}
+  .btn.ghost{border-color:rgba(255,255,255,.55)}
+  .btn.ghost:hover{border-color:#1de9d8;background:rgba(29,233,216,.12)}
+  p{text-wrap:pretty}
+}
+@media screen and (max-width:700px){
+  .contact{flex-direction:column;align-items:flex-start;gap:.5rem}
+  .contact a{min-height:44px}
+  .cta .btn.ghost{display:none}      /* the bottom bar already has Email */
+  .cta .btn.primary{width:100%;justify-content:center}
+}
+@media screen and (prefers-reduced-motion:reduce){
+  *{transition:none!important;scroll-behavior:auto!important}
+}
 
 @media print{
   .side .grp{padding:2mm;margin-bottom:2mm}.side .grp h4{font-size:8.6pt;margin-bottom:1.6mm;gap:2mm}.ico{width:5mm;height:5mm;border-radius:1.4mm;box-shadow:none}.ico svg{width:3mm;height:3mm}.tags{gap:1mm}.tags span{font-size:7.4pt;padding:.2mm 1.3mm}
