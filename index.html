@@ -173,6 +173,10 @@ h1{font-size:clamp(2rem,7.4vw,3.7rem);letter-spacing:0}
   .btn.ghost{border-color:rgba(255,255,255,.55)}
   .btn.ghost:hover{border-color:#1de9d8;background:rgba(29,233,216,.12)}
   p{text-wrap:pretty}
+  #printBtn{display:none}
+}
+@media screen and (hover:hover) and (pointer:fine) and (min-width:701px){
+  .cta #printBtn{display:inline-flex}
 }
 @media screen and (max-width:700px){
   .contact{flex-direction:column;align-items:flex-start;gap:.5rem}
@@ -180,13 +184,65 @@ h1{font-size:clamp(2rem,7.4vw,3.7rem);letter-spacing:0}
   .cta .btn.ghost{display:none}      /* the bottom bar already has Email */
   .cta .btn.primary{width:100%;justify-content:center}
 }
+.topbar,.stats{display:none}
+@media screen{
+  html{scroll-behavior:smooth}
+  [id]{scroll-margin-top:4.5rem}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  .hero>*{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+  .hero>:nth-child(2){animation-delay:.08s}.hero>:nth-child(3){animation-delay:.16s}.hero>:nth-child(4){animation-delay:.24s}
+  .hero>:nth-child(5){animation-delay:.32s}.hero>:nth-child(6){animation-delay:.4s}.hero>:nth-child(7){animation-delay:.48s}
+  .art{animation:fade 1.4s .2s both}
+
+  /* Career highlights */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;margin:0 0 1.8rem;padding:0;list-style:none}
+  .stats li{background:var(--card);border:1px solid var(--line);border-bottom:3px solid var(--teal-bright);border-radius:12px;padding:.9rem .6rem;text-align:center}
+  .stats b{display:block;font-size:1.7rem;line-height:1.15;font-weight:800;color:var(--head)}
+  .stats span{font-size:.82rem;font-weight:500;color:var(--muted)}
+  .stats li:nth-child(2){transition-delay:.08s}.stats li:nth-child(3){transition-delay:.16s}.stats li:nth-child(4){transition-delay:.24s}
+
+  /* Cards */
+  .projects{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .proj{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--teal-bright);border-radius:12px;padding:1.1rem 1.2rem;margin:0}
+  .proj:first-child{grid-column:1/-1}
+  .job,.proj,.stats li{transition:box-shadow .25s,translate .25s,border-color .25s}
+  .job:hover,.proj:hover,.stats li:hover{translate:0 -3px;box-shadow:0 12px 28px rgba(15,35,66,.12)}
+
+  /* Scroll reveal (class added by script only when motion is allowed) */
+  .js .rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease,translate .25s,box-shadow .25s,border-color .25s}
+  .js .rv.in{opacity:1;transform:none}
+
+  /* Sticky top bar after scrolling past the header */
+  .topbar{display:flex;position:fixed;top:0;left:0;right:0;z-index:40;align-items:center;gap:1.2rem;
+    padding:.5rem clamp(1rem,4vw,2rem);padding-top:calc(.5rem + env(safe-area-inset-top,0px));
+    background:rgba(2,11,31,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(45,212,191,.25);transform:translateY(-100%);visibility:hidden;
+    transition:transform .3s ease,visibility .3s}
+  .topbar.show{transform:none;visibility:visible}
+  .topbar a{color:#e9fffb;font-weight:600;font-size:.92rem;text-decoration:none}
+  .topbar a:hover{color:#1de9d8}
+  .topbar nav{display:flex;gap:1.4rem;margin-left:auto}
+  .topbar .btn{margin:0;min-height:40px;padding:.3rem 1.1rem;font-size:.88rem}
+}
+/* Sidebar was taller than the screen when sticky; keep it static unless the screen is tall */
+@media screen and (min-width:900px){.side{position:static}}
+@media screen and (min-width:900px) and (min-height:1150px){.side{position:sticky;top:4.5rem}}
+@media screen and (max-width:700px){.topbar{display:none}}
+@media screen and (max-width:560px){.stats{grid-template-columns:1fr 1fr}.projects{grid-template-columns:1fr}}
+@media screen and (min-width:561px) and (max-width:760px){.projects{grid-template-columns:1fr}}
 @media screen and (prefers-reduced-motion:reduce){
-  *{transition:none!important;scroll-behavior:auto!important}
+  *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+  .js .rv{opacity:1!important;transform:none!important}
 }
 
 @media print{
   .side .grp{padding:2mm;margin-bottom:2mm}.side .grp h4{font-size:8.6pt;margin-bottom:1.6mm;gap:2mm}.ico{width:5mm;height:5mm;border-radius:1.4mm;box-shadow:none}.ico svg{width:3mm;height:3mm}.tags{gap:1mm}.tags span{font-size:7.4pt;padding:.2mm 1.3mm}
-  .art,.wave,.bar,.cta,.facts{display:none}
+  .art,.wave,.bar,.cta,.facts,.topbar,.stats{display:none}
+  .side .skill-grid{display:block}
+  .tags{display:block}
+  .tags span{display:inline;border:0;background:none;border-radius:0;padding:0}
+  .tags span:not(:last-child)::after{content:" · ";opacity:.6}
   @page{size:A4;margin:10mm}
   :root:root:root{--bg:#fff;--card:#fff;--ink:#1f2933;--muted:#5a6575;--head:#0f2342;--teal:#066b63;--tint:#e6f5f2;--line:#d6e6e8;--side:#0f2342;--side-ink:#dde6f3;padding:0}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
@@ -209,7 +265,12 @@ h1{font-size:clamp(2rem,7.4vw,3.7rem);letter-spacing:0}
 </head>
 <body>
 <a class="skip" href="#content">Skip to content</a>
-<header>
+<div class="topbar" id="topbar">
+  <a href="#top">Nikhil George Oommen</a>
+  <nav aria-label="Sections"><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a></nav>
+  <button class="btn primary" data-pdf type="button">Download Resume</button>
+</div>
+<header id="top">
   <div class="art" aria-hidden="true"></div>
   <div class="wrap hero">
     <h1>Nikhil George Oommen</h1>
@@ -226,8 +287,9 @@ h1{font-size:clamp(2rem,7.4vw,3.7rem);letter-spacing:0}
       <li><a href="https://www.linkedin.com/in/nikhilgeorgeoommen" rel="noopener">linkedin.com/in/nikhilgeorgeoommen</a></li>
     </ul>
     <div class="cta">
-      <button class="btn primary" id="pdfBtn" type="button">Download Resume</button>
+      <button class="btn primary" id="pdfBtn" data-pdf type="button">Download Resume</button>
       <a class="btn ghost" href="mailto:nikhilgeorgeoommen@gmail.com">Contact me</a>
+      <button class="btn ghost" id="printBtn" type="button">Print</button>
     </div>
   </div>
   <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="wg"><stop offset="0" stop-color="#0b4a8f"/><stop offset="1" stop-color="#1de9d8"/></linearGradient></defs><path d="M0 80V46C240 6 520 66 820 36s420-30 620 0v44z" fill="url(#wg)" opacity=".9"/><path d="M0 80V62C300 38 620 78 980 54s330-18 460-4v30z" style="fill:var(--bg)"/></svg>
@@ -237,12 +299,19 @@ h1{font-size:clamp(2rem,7.4vw,3.7rem);letter-spacing:0}
 <main class="layout" id="content">
 <div class="main">
 
+<ul class="stats" aria-label="Career highlights">
+  <li><b data-count="11" data-suffix="+">11+</b><span>Years in mobile</span></li>
+  <li><b data-count="50" data-suffix="+">50+</b><span>Apps shipped</span></li>
+  <li><b data-count="11">11</b><span>iOS team led</span></li>
+  <li><b data-count="4.9" data-dec="1" data-suffix="★">4.9★</b><span>App Store rating</span></li>
+</ul>
+
 <section>
   <h2>Professional Summary</h2>
   <p class="summary">Senior iOS Developer with 11+ years of experience building and releasing native iOS apps, with 50+ apps delivered to the App Store for clients across India, the US, Europe, the Middle East and Australia. Has led an 11-member iOS team. Strong in Swift, SwiftUI and Objective-C, with hands-on experience in BLE/IoT, geofencing and location features, payment integrations, Objective-C-to-Swift migration and Fastlane CI/CD. Also experienced in Flutter, React Native and AI-assisted development.</p>
 </section>
 
-<section>
+<section id="experience">
   <h2>Professional Experience</h2>
 
   <div class="job">
@@ -285,8 +354,9 @@ h1{font-size:clamp(2rem,7.4vw,3.7rem);letter-spacing:0}
   </div>
 </section>
 
-<section>
+<section id="projects">
   <h2>Key Projects</h2>
+  <div class="projects">
   <div class="proj">
     <h3>Bloom: BLE &amp; IoT Rental Management App</h3>
     <p class="stack">Swift 5 | Core Bluetooth | Core Location | Firebase | Google Maps | <a href="https://apps.apple.com/us/app/bloom-share-bikes-evs-more/id6736392137" rel="noopener">View on App Store →</a></p>
@@ -312,6 +382,7 @@ h1{font-size:clamp(2rem,7.4vw,3.7rem);letter-spacing:0}
     <p class="stack">Swift | REST APIs | Localisation | <a href="https://apps.apple.com/us/app/qgo-online/id1479411985" rel="noopener">View QGO on App Store →</a></p>
     <p>Built and shipped iOS apps for flight, hotel and holiday package booking, including QGO, with search and filters, traveller details flows, booking management and multi-language, multi-region support.</p>
   </div>
+  </div>
 </section>
 
 <section>
@@ -323,7 +394,7 @@ h1{font-size:clamp(2rem,7.4vw,3.7rem);letter-spacing:0}
 
 <aside class="side">
   <div class="card">
-    <section>
+    <section id="skills">
       <h2>Technical Skills</h2><div class="skill-grid">
       <div class="grp"><h4><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg></span>iOS Development</h4><div class="tags"><span>Swift</span><span>SwiftUI</span><span>UIKit</span><span>Objective-C</span><span>Cocoa Touch</span><span>async/await</span><span>Core Data</span><span>Push Notifications</span><span>Localisation</span><span>iPhone &amp; iPad UI</span></div></div>
       <div class="grp"><h4><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 2.5 7.5 12 12.5l9.5-5z"/><path d="m2.5 12 9.5 5 9.5-5"/><path d="m2.5 16.5 9.5 5 9.5-5"/></svg></span>Architecture &amp; Testing</h4><div class="tags"><span>MVVM</span><span>Clean Architecture</span><span>REST APIs</span><span>Legacy Code Migration</span><span>Unit &amp; Integration Testing</span><span>Performance Optimisation</span></div></div>
@@ -348,17 +419,64 @@ h1{font-size:clamp(2rem,7.4vw,3.7rem);letter-spacing:0}
 <script>
 (function(){
   var B64="PASTE_YOUR_EXISTING_PDF_BASE64_HERE";
+  var FILE="Nikhil_George_Oommen_Resume.pdf";
+  var isIOS=/iP(hone|ad|od)/.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
   function blobUrl(){
     var bin=atob(B64),n=bin.length,u=new Uint8Array(n);
     for(var i=0;i<n;i++)u[i]=bin.charCodeAt(i);
     return URL.createObjectURL(new Blob([u],{type:"application/pdf"}));
   }
-  document.getElementById("pdfBtn").addEventListener("click",function(){
-    try{
-      var url=blobUrl(), w=window.open(url,"_blank");
-      if(!w){var a=document.createElement("a");a.href=url;a.download="Nikhil_George_Oommen_Resume.pdf";document.body.appendChild(a);a.click();a.remove();}
-    }catch(e){window.print();}
-  });
+  function download(){
+    var url;
+    try{url=blobUrl();}catch(e){window.print();return;}
+    if(isIOS){
+      /* iPhone/iPad: open the PDF viewer (Share > Save to Files / Print) */
+      var w=window.open(url,"_blank");
+      if(!w){window.location.href=url;}
+    }else{
+      /* Android and desktop: direct file download */
+      var a=document.createElement("a");
+      a.href=url;a.download=FILE;a.rel="noopener";
+      document.body.appendChild(a);a.click();a.remove();
+    }
+    setTimeout(function(){URL.revokeObjectURL(url);},60000);
+  }
+  Array.prototype.forEach.call(document.querySelectorAll("[data-pdf]"),function(b){b.addEventListener("click",download);});
+  var pb=document.getElementById("printBtn");
+  if(pb){pb.addEventListener("click",function(){window.print();});}
+})();
+</script>
+<script>
+(function(){
+  var d=document,root=d.documentElement;
+  if(!('IntersectionObserver' in window))return;
+  var tb=d.getElementById('topbar'),hdr=d.querySelector('header');
+  if(tb&&hdr){
+    new IntersectionObserver(function(e){tb.classList.toggle('show',!e[0].isIntersecting);},{rootMargin:'-80px 0px 0px 0px'}).observe(hdr);
+  }
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  root.classList.add('js');
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});
+  },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  d.querySelectorAll('.stats li,.summary,.job,.proj,.apps,.side .grp').forEach(function(el){el.classList.add('rv');io.observe(el);});
+  function count(el){
+    var t=parseFloat(el.getAttribute('data-count')),dec=+el.getAttribute('data-dec')||0,suf=el.getAttribute('data-suffix')||'',st=null;
+    function step(ts){
+      if(!st)st=ts;
+      var p=Math.min((ts-st)/1100,1),e=1-Math.pow(1-p,3);
+      el.textContent=(t*e).toFixed(dec)+suf;
+      if(p<1)requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var stats=d.querySelector('.stats');
+  if(stats){
+    var so=new IntersectionObserver(function(es){
+      if(es[0].isIntersecting){stats.querySelectorAll('[data-count]').forEach(count);so.disconnect();}
+    },{threshold:.4});
+    so.observe(stats);
+  }
 })();
 </script>
 </body>
