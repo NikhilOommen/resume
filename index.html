@@ -23,7 +23,7 @@
 <meta name="twitter:title" content="Nikhil George Oommen – Senior iOS Developer">
 <meta name="twitter:description" content="Senior iOS Developer with 11+ years of experience and 50+ apps delivered. Swift, SwiftUI, Objective-C, Flutter, React Native, BLE/IoT. Based in Kerala, India.">
 <meta name="twitter:image" content="https://nikhiloommen.github.io/resume/NGO.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Nikhil George Oommen","jobTitle":"Senior iOS Developer","url":"https://nikhiloommen.github.io/resume/","email":"mailto:nikhilgeorgeoommen@gmail.com","telephone":"+91 94964 10914","address":{"@type":"PostalAddress","addressRegion":"Kerala","addressCountry":"IN"},"sameAs":["https://www.linkedin.com/in/nikhilgeorgeoommen"],"knowsAbout":["iOS development","Swift","SwiftUI","Objective-C","Flutter","React Native","Core Bluetooth","IoT","Fastlane"],"alumniOf":{"@type":"CollegeOrUniversity","name":"College of Engineering, Adoor"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Nikhil George Oommen","jobTitle":"Senior iOS Developer","url":"https://nikhiloommen.github.io/resume/","email":"mailto:nikhilgeorgeoommen@gmail.com","telephone":"+91 94964 10914","address":{"@type":"PostalAddress","addressRegion":"Kerala","addressCountry":"IN"},"sameAs":["https://www.linkedin.com/in/nikhilgeorgeoommen"],"knowsAbout":["iOS development","Swift","SwiftUI","Objective-C","Flutter","React Native","Core Bluetooth","IoT","Fastlane","Clean Architecture","MVVM","AI-assisted programming","HealthTech","LegalTech"],"alumniOf":{"@type":"CollegeOrUniversity","name":"College of Engineering, Adoor"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -328,6 +328,24 @@ html{scrollbar-color:#1de9d8 transparent}
   .proj:first-child .shot{grid-column:2;grid-row:1/span 3;margin:-1.1rem -1.2rem -1.1rem 0;height:auto;min-height:190px;border-radius:0 9px 9px 0}
 }
 @media screen and (max-width:760px){.proj:first-child{display:block}.proj:first-child .shot{margin:-1.1rem -1.2rem 1rem;height:172px;min-height:0;border-radius:9px 9px 0 0}}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(124,242,154,.55)}100%{box-shadow:0 0 0 10px rgba(124,242,154,0)}}
+@media screen{
+  .open{display:inline-flex;align-items:center;gap:.55rem;margin:0 0 .9rem;padding:.3rem .95rem;border-radius:999px;background:rgba(124,242,154,.12);border:1px solid rgba(124,242,154,.45);color:#c9ffd9;font-size:.85rem;font-weight:600}
+  .open .dot{width:.55rem;height:.55rem;border-radius:50%;background:#7cf29a;animation:ping 2s infinite}
+  .expertise{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:.9rem}
+  .ex{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1rem 1.05rem;transition:box-shadow .25s,transform .15s ease-out,border-color .25s}
+  .ex:hover{box-shadow:0 14px 32px rgba(15,35,66,.14);border-color:var(--teal-bright)}
+  .exi{width:2.3rem;height:2.3rem;display:grid;place-items:center;border-radius:10px;background:linear-gradient(135deg,#1de9d8,#1b8fe8);color:#03213a;margin-bottom:.6rem;box-shadow:0 6px 14px rgba(29,233,216,.25)}
+  .exi svg,.domains svg{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .exi svg{width:1.2rem;height:1.2rem}
+  .ex h3{margin:0 0 .25rem;font-size:.98rem;color:var(--head)}
+  .ex p{margin:0;font-size:.9rem;color:var(--muted)}
+  .dh{margin:1.4rem 0 .6rem;font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .domains{display:flex;flex-wrap:wrap;gap:.55rem}
+  .domains span{display:inline-flex;align-items:center;gap:.45rem;padding:.4rem .95rem;border-radius:999px;background:var(--tint);color:var(--teal);border:1px solid var(--line);font-weight:600;font-size:.88rem}
+  .domains svg{width:1rem;height:1rem}
+  .lv{color:#9fb4d0;font-size:.82rem}
+}
 @media screen and (max-width:700px){.totop{bottom:5.4rem}}
 @media screen and (prefers-reduced-motion:reduce){
   *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
@@ -467,7 +485,7 @@ html{scrollbar-color:#1de9d8 transparent}
   .side .grp{background:none!important;border:0!important;padding:0 0 1mm!important;margin:0 0 1.5mm!important}
   .side .grp h4{margin-bottom:.8mm!important}
   .tags span{font-size:6.9pt!important}
-  header::after,.shot{display:none!important}
+  header::after,.shot,.web-only{display:none!important}
 }
 </style>
 </head>
@@ -496,6 +514,7 @@ html{scrollbar-color:#1de9d8 transparent}
     </div>
   </div>
   <div class="wrap hero">
+    <p class="open web-only"><span class="dot"></span>Open to opportunities</p>
     <h1>Nikhil George Oommen</h1>
     <p class="role">Senior <span class="hl">iOS</span> Developer</p>
     <p class="role2">Native iOS specialist with cross-platform experience</p>
@@ -527,6 +546,20 @@ html{scrollbar-color:#1de9d8 transparent}
   <p class="summary">Senior iOS Developer with <strong>11+ years</strong> of experience building and releasing native iOS apps, with <strong>50+ apps</strong> delivered to the App Store for clients across India, the US, Europe, the Middle East and Australia. Has led an <strong>11-member iOS team</strong>. Strong in Swift, SwiftUI and Objective-C, with hands-on experience in BLE/IoT, geofencing and location features, payment integrations, Objective-C-to-Swift migration and Fastlane CI/CD. Also experienced in Flutter, React Native and AI-assisted development.</p>
 </section>
 
+<section class="web-only" id="expertise">
+  <h2>Core Expertise</h2>
+  <div class="expertise">
+    <div class="ex"><span class="exi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 2.5 7.5 12 12.5l9.5-5z"/><path d="m2.5 12 9.5 5 9.5-5"/></svg></span><h3>Mobile architecture &amp; system design</h3><p>MVVM and Clean Architecture for scalable, maintainable, high-performance apps.</p></div>
+    <div class="ex"><span class="exi"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg></span><h3>Native iOS &amp; cross-platform</h3><p>Swift, SwiftUI and Objective-C, plus Flutter and React Native.</p></div>
+    <div class="ex"><span class="exi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16a8 8 0 1 1 16 0"/><path d="m12 16 4-5"/></svg></span><h3>Performance &amp; reliability</h3><p>Debugging, legacy code refactoring and memory optimisation across projects.</p></div>
+    <div class="ex"><span class="exi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg></span><h3>End-to-end product ownership</h3><p>From architecture and development to App Store release and continuous improvement.</p></div>
+    <div class="ex"><span class="exi"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17.5" cy="9" r="2.5"/><path d="M17 14.500a5 5 0 0 1 4.500 5"/></svg></span><h3>Leadership &amp; mentoring</h3><p>Led an 11-member iOS team with technical guidance and delivery oversight.</p></div>
+    <div class="ex"><span class="exi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14-4M4 4v4h4M4 13a8 8 0 0 0 14 4M20 20v-4h-4"/></svg></span><h3>CI/CD &amp; release management</h3><p>Fastlane automation and stable App Store and Google Play releases.</p></div>
+  </div>
+  <h3 class="dh">Industries delivered</h3>
+  <div class="domains"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7a3 3 0 0 0 6 0zM19 7l-3 7a3 3 0 0 0 6 0z"/></svg>LegalTech</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 7 10 10-5 5V2l5 5L7 17"/></svg>IoT &amp; BLE</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4zM22 2 11 13"/></svg>Travel &amp; Hospitality</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="13" height="12" rx="2"/><path d="m15 10 7-4v12l-7-4z"/></svg>HealthTech &amp; Telemedicine</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3v8a2 2 0 0 0 2 2v8M9 3v8M7 3v8M18 21V3c-3 2-4 5-4 8h4"/></svg>FoodTech</span></div>
+</section>
+
 <section id="experience">
   <h2>Professional Experience</h2>
 
@@ -540,6 +573,9 @@ html{scrollbar-color:#1de9d8 transparent}
       <li>Designed scalable iOS architectures (MVVM, Clean Architecture) for iPhone and iPad across multiple client products.</li>
       <li>Built Flutter and React Native apps, including Hugo and Nuevo.</li>
       <li>Automated build and release pipelines with Fastlane, supporting CI/CD and App Store submissions.</li>
+      <li class="web-only">Built secure healthcare features, including appointment scheduling, medical questionnaires and REST API integrations.</li>
+      <li class="web-only">Improved performance and stability through debugging, legacy code refactoring and memory optimisation across multiple projects.</li>
+      <li class="web-only">Managed end-to-end release cycles for stable App Store and Google Play deployments.</li>
     </ul>
     <div class="role-row"><h4>Senior iOS Developer</h4><span class="dates">Aug 2020 – Mar 2023</span></div>
     <ul class="b">
@@ -547,6 +583,8 @@ html{scrollbar-color:#1de9d8 transparent}
       <li>Implemented Core Location features: vehicle discovery, geofenced riding zones, parking stations and reservations.</li>
       <li>Integrated numerous Bluetooth bike and asset devices, Stripe, Apple Pay, HyperPay and Firebase.</li>
       <li>Automated builds with Fastlane and supported App Store releases.</li>
+      <li class="web-only">Delivered mobile products for startups, SMEs and enterprises across the US, Europe and Australia.</li>
+      <li class="web-only">Added new workflows for efficient user data collection.</li>
     </ul>
   </div>
 
@@ -557,6 +595,8 @@ html{scrollbar-color:#1de9d8 transparent}
       <li>Led and coordinated an 11-member iOS development team, providing technical guidance and overseeing delivery.</li>
       <li>Developed and delivered 20+ native iOS apps in Swift and Objective-C, from requirements to App Store release.</li>
       <li>Managed the full lifecycle of QGO, a travel booking app, including multi-language and multi-region localisation.</li>
+      <li class="web-only">Built responsive, multi-threaded apps integrated with complex REST APIs, using Swift, Objective-C, C++ and Core Data.</li>
+      <li class="web-only">Handled UI implementation with Interface Builder, JSON data parsing and localisation.</li>
     </ul>
   </div>
 
@@ -566,6 +606,8 @@ html{scrollbar-color:#1de9d8 transparent}
     <ul class="b">
       <li>Built adaptive UI frameworks for all iPhone and iPad screens.</li>
       <li>Worked on interfaces for iOS, Android and web at a game startup.</li>
+      <li class="web-only">Core member of a 3-person team building native iOS apps from concept to launch.</li>
+      <li class="web-only">Implemented Apple Push Notifications (APNs) to improve user retention.</li>
     </ul>
   </div>
 </section>
@@ -631,7 +673,7 @@ html{scrollbar-color:#1de9d8 transparent}
     </section>
     <section>
       <h2>Languages</h2>
-      <p>English</p><p>Malayalam</p>
+      <p>English<span class="web-only lv"> · Professional working</span></p><p>Malayalam<span class="web-only lv"> · Native</span></p><p class="web-only">Hindi<span class="lv"> · Elementary</span></p>
     </section>
   </div>
 </aside>
@@ -700,7 +742,7 @@ html{scrollbar-color:#1de9d8 transparent}
       });
       hd.addEventListener('pointerleave',function(){if(sc){sc.style.setProperty('--ry','0deg');sc.style.setProperty('--rx','0deg');}});
     }
-    d.querySelectorAll('.proj,.job,.side .grp').forEach(function(el){
+    d.querySelectorAll('.proj,.job,.side .grp,.ex').forEach(function(el){
       var max=el.classList.contains('proj')?6:el.classList.contains('job')?2.2:3;
       el.classList.add('tilt');
       el.addEventListener('pointermove',function(e){
@@ -724,7 +766,7 @@ html{scrollbar-color:#1de9d8 transparent}
   var io=new IntersectionObserver(function(es){
     es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});
   },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
-  d.querySelectorAll('.summary,.job,.proj,.apps,.side .grp,.end-in').forEach(function(el){el.classList.add('rv');io.observe(el);});
+  d.querySelectorAll('.summary,.job,.proj,.apps,.side .grp,.end-in,.ex,.domains').forEach(function(el){el.classList.add('rv');io.observe(el);});
 })();
 </script>
 </body>
