@@ -23,12 +23,13 @@
 <meta name="twitter:title" content="Nikhil George Oommen – Senior iOS Developer">
 <meta name="twitter:description" content="Senior iOS Developer with 11+ years of experience and 50+ apps delivered. Swift, SwiftUI, Objective-C, Flutter, React Native, BLE/IoT. Based in Kerala, India.">
 <meta name="twitter:image" content="https://nikhiloommen.github.io/resume/NGO.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Nikhil George Oommen","jobTitle":"Senior iOS Developer","url":"https://nikhiloommen.github.io/resume/","email":"mailto:nikhilgeorgeoommen@gmail.com","telephone":"+91 94964 10914","address":{"@type":"PostalAddress","addressRegion":"Kerala","addressCountry":"IN"},"sameAs":["https://www.linkedin.com/in/nikhilgeorgeoommen"],"knowsAbout":["iOS development","Swift","SwiftUI","Objective-C","Flutter","React Native","Core Bluetooth","IoT","Fastlane","Clean Architecture","MVVM","AI-assisted programming","HealthTech","LegalTech"],"alumniOf":{"@type":"CollegeOrUniversity","name":"College of Engineering, Adoor"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Nikhil George Oommen","jobTitle":"Senior iOS Developer","url":"https://nikhiloommen.github.io/resume/","email":"nikhilgeorgeoommen@gmail.com","telephone":"+91 94964 10914","address":{"@type":"PostalAddress","addressRegion":"Kerala","addressCountry":"IN"},"sameAs":["https://www.linkedin.com/in/nikhilgeorgeoommen"],"knowsAbout":["iOS development","Swift","SwiftUI","Objective-C","Flutter","React Native","Core Bluetooth","IoT","Fastlane","Clean Architecture","MVVM","AI-assisted programming","HealthTech","LegalTech"],"alumniOf":{"@type":"CollegeOrUniversity","name":"College of Engineering, Adoor"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css"></noscript>
 <style>
 :root{
   --bg:#f4f8fb; --card:#ffffff; --ink:#1f2933; --muted:#5a6575; --head:#0f2342;
@@ -345,6 +346,9 @@ html{scrollbar-color:#1de9d8 transparent}
   .domains span{display:inline-flex;align-items:center;gap:.45rem;padding:.4rem .95rem;border-radius:999px;background:var(--tint);color:var(--teal);border:1px solid var(--line);font-weight:600;font-size:.88rem}
   .domains svg{width:1rem;height:1rem}
   .lv{color:#9fb4d0;font-size:.82rem}
+  .apps{display:flex;flex-wrap:wrap;font-size:0}
+  .apps span{font-size:.85rem;font-weight:600;margin:0 .5rem .5rem 0;padding:.3rem .8rem;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--head);transition:border-color .2s,background .2s}
+  .apps span:hover{border-color:var(--teal-bright);background:var(--tint)}
 }
 @media screen and (max-width:700px){.totop{bottom:5.4rem}}
 @media screen and (prefers-reduced-motion:reduce){
@@ -475,13 +479,13 @@ html{scrollbar-color:#1de9d8 transparent}
 }
 
 @media print{
-  html{background:linear-gradient(90deg,#102746 0,#102746 72mm,#fff 72mm)!important}
+  html{background:linear-gradient(90deg,#102746 0,#102746 60mm,#fff 60mm)!important}
   body{background:transparent!important}
   .role2,.tech,.facts,.job::before{display:none!important}
   header{padding:7mm 9mm 6mm!important}
   main.layout{padding-top:5mm!important}
   .side{break-inside:avoid;page-break-inside:avoid}
-  .side .card{background:transparent!important;border-radius:0!important;padding:3mm 3mm 0 0!important}
+  .side .card{background:transparent!important;border-radius:0!important;padding:3mm 3mm 0 3mm!important}
   .side .grp{background:none!important;border:0!important;padding:0 0 1mm!important;margin:0 0 1.5mm!important}
   .side .grp h4{margin-bottom:.8mm!important}
   .tags span{font-size:6.9pt!important}
@@ -526,7 +530,7 @@ html{scrollbar-color:#1de9d8 transparent}
     <ul class="contact">
       <li><a href="tel:+919496410914">+91 94964 10914</a></li>
       <li><a href="mailto:nikhilgeorgeoommen@gmail.com">nikhilgeorgeoommen@gmail.com</a></li>
-      <li><a href="https://www.linkedin.com/in/nikhilgeorgeoommen" rel="noopener">linkedin.com/in/nikhilgeorgeoommen</a></li>
+      <li><a href="https://www.linkedin.com/in/nikhilgeorgeoommen" target="_blank" rel="noopener noreferrer">linkedin.com/in/nikhilgeorgeoommen</a></li>
     </ul>
     <div class="cta">
       <button class="btn primary" id="pdfBtn" data-pdf type="button">Download Resume</button>
@@ -534,7 +538,7 @@ html{scrollbar-color:#1de9d8 transparent}
   </div>
   <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="wg"><stop offset="0" stop-color="#0b4a8f"/><stop offset="1" stop-color="#1de9d8"/></linearGradient></defs><path d="M0 80V46C240 6 520 66 820 36s420-30 620 0v44z" fill="url(#wg)" opacity=".9"/><path d="M0 80V62C300 38 620 78 980 54s330-18 460-4v30z" style="fill:var(--bg)"/></svg>
 </header>
-<nav class="bar" aria-label="Quick contact"><a href="tel:+919496410914">Call</a><a href="mailto:nikhilgeorgeoommen@gmail.com">Email</a><a href="https://www.linkedin.com/in/nikhilgeorgeoommen" rel="noopener">LinkedIn</a></nav>
+<nav class="bar" aria-label="Quick contact"><a href="tel:+919496410914">Call</a><a href="mailto:nikhilgeorgeoommen@gmail.com">Email</a><a href="https://www.linkedin.com/in/nikhilgeorgeoommen" target="_blank" rel="noopener noreferrer">LinkedIn</a></nav>
 
 <div class="marquee" aria-hidden="true"><div class="mq-track"><span><i class="devicon-swift-plain colored"></i>Swift</span><span><i class="devicon-apple-original"></i>SwiftUI</span><span><i class="devicon-objectivec-plain"></i>Objective-C</span><span><i class="devicon-flutter-plain colored"></i>Flutter</span><span><i class="devicon-react-original colored"></i>React Native</span><span><i class="devicon-dart-plain colored"></i>Dart</span><span><i class="devicon-typescript-plain colored"></i>TypeScript</span><span><i class="devicon-firebase-plain colored"></i>Firebase</span><span><i class="devicon-xcode-plain colored"></i>Xcode</span><span><i class="devicon-git-plain colored"></i>Git</span><span><i class="devicon-postman-plain colored"></i>Postman</span><span><i class="devicon-bitbucket-original colored"></i>Bitbucket</span><span>Core Bluetooth</span><span>Fastlane</span><span>Stripe</span><span>MVVM</span><span>Clean Architecture</span></div></div>
 
@@ -618,13 +622,13 @@ html{scrollbar-color:#1de9d8 transparent}
   <div class="proj">
     <div class="shot s1" aria-hidden="true"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid meet"><defs><filter id="sh1" x="-30%" y="-20%" width="160%" height="150%"><feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#020b1f" flood-opacity=".45"/></filter></defs><circle cx="48" cy="30" r="42" fill="rgba(255,255,255,.07)"/><circle cx="352" cy="140" r="52" fill="rgba(255,255,255,.07)"/><g transform="rotate(-9 150 100)" opacity=".85"><rect x="112" y="26" width="84" height="132" rx="14" fill="#0a1a33" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="118" y="32" width="72" height="120" rx="9" fill="rgba(255,255,255,.1)"/></g><g class="ph"><rect x="150" y="10" width="100" height="156" rx="18" fill="#0a1a33" stroke="rgba(255,255,255,.65)" stroke-width="2" filter="url(#sh1)"/><rect x="156" y="16" width="88" height="144" rx="12" fill="#0d2a4f"/><path d="M156 62 244 52M156 96 244 108M190 30 198 150M224 30 216 150" stroke="rgba(255,255,255,.13)" stroke-width="5" fill="none"/><path d="M176 104C182 84 206 90 214 66S222 52 222 52" stroke="#1de9d8" stroke-width="3" fill="none" stroke-dasharray="4 5" stroke-linecap="round"/><circle cx="222" cy="50" r="7" fill="#1de9d8"/><circle cx="222" cy="50" r="2.5" fill="#fff"/><circle cx="176" cy="104" r="4" fill="#fff"/><rect x="160" y="114" width="80" height="32" rx="9" fill="#fff"/><circle cx="174" cy="130" r="8" fill="#1de9d8"/><rect x="186" y="124" width="24" height="4" rx="2" fill="#c9d6e6"/><rect x="186" y="132" width="16" height="4" rx="2" fill="#dfe8f2"/><rect x="214" y="125" width="20" height="10" rx="5" fill="#1de9d8"/><rect x="186" y="20" width="28" height="6" rx="3" fill="#05122a"/><rect x="186" y="153" width="28" height="3" rx="1.5" fill="rgba(255,255,255,.55)"/></g><g class="cp"><rect x="24" y="44" width="90" height="26" rx="13" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.4)"/><text x="69" y="61" text-anchor="middle">BLE unlock</text></g><g class="cp"><rect x="24" y="100" width="90" height="26" rx="13" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.4)"/><text x="69" y="117" text-anchor="middle">Geofencing</text></g><g class="cp"><rect x="273" y="40" width="103" height="26" rx="13" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.4)"/><text x="324" y="57" text-anchor="middle">4.9 ★ rating</text></g><g class="cp"><rect x="273" y="96" width="103" height="26" rx="13" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.4)"/><text x="324" y="113" text-anchor="middle">14 languages</text></g></svg></div>
     <h3><span class="pi"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="17" r="3.5"/><circle cx="18.5" cy="17" r="3.5"/><path d="M5.5 17 9 8h5l4.500 9M9 8l3 9M13 5h3"/></svg></span>Bloom: BLE &amp; IoT Rental Management App</h3>
-    <p class="stack">Swift 5 | Core Bluetooth | Core Location | Firebase | Google Maps | <a href="https://apps.apple.com/us/app/bloom-share-bikes-evs-more/id6736392137" rel="noopener">View on App Store →</a></p>
+    <p class="stack">Swift 5 | Core Bluetooth | Core Location | Firebase | Google Maps | <a href="https://apps.apple.com/us/app/bloom-share-bikes-evs-more/id6736392137" target="_blank" rel="noopener noreferrer">View on App Store →</a></p>
     <p>Sole iOS developer. Bike and e-scooter sharing app rated 4.9 on the App Store (1.7K ratings) and available in 14 languages: BLE and IoT unlocking, multi-rental support, geofenced zones, parking stations, reservations, payments and push notifications, with numerous Bluetooth bike and asset devices supported.</p>
   </div>
   <div class="proj">
     <div class="shot s2" aria-hidden="true"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid meet"><defs><filter id="sh2" x="-30%" y="-20%" width="160%" height="150%"><feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#020b1f" flood-opacity=".45"/></filter></defs><circle cx="48" cy="30" r="42" fill="rgba(255,255,255,.07)"/><circle cx="352" cy="140" r="52" fill="rgba(255,255,255,.07)"/><g transform="rotate(-9 150 100)" opacity=".85"><rect x="112" y="26" width="84" height="132" rx="14" fill="#0a1a33" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="118" y="32" width="72" height="120" rx="9" fill="rgba(255,255,255,.1)"/></g><g class="ph"><rect x="150" y="10" width="100" height="156" rx="18" fill="#0a1a33" stroke="rgba(255,255,255,.65)" stroke-width="2" filter="url(#sh2)"/><rect x="156" y="16" width="88" height="144" rx="12" fill="#f4f7fb"/><rect x="156" y="30" width="88" height="14" fill="#0f2342"/><rect x="164" y="35" width="26" height="4" rx="2" fill="#fff"/><rect x="162" y="50" width="76" height="40" rx="6" fill="#3b5bdb"/><path d="M200 58v24M190 82h20M184 64h32M184 64l-5 10a5 5 0 0 0 10 0zM216 64l-5 10a5 5 0 0 0 10 0z" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="162" y="96" width="70" height="5" rx="2.5" fill="#1f2933"/><rect x="162" y="106" width="48" height="5" rx="2.5" fill="#9aa8bd"/><rect x="162" y="118" width="22" height="16" rx="4" fill="#c7d2fe"/><rect x="190" y="120" width="44" height="4" rx="2" fill="#cbd5e1"/><rect x="190" y="128" width="30" height="4" rx="2" fill="#e2e8f0"/><rect x="162" y="138" width="22" height="10" rx="4" fill="#c7d2fe"/><rect x="190" y="140" width="44" height="4" rx="2" fill="#cbd5e1"/><rect x="186" y="20" width="28" height="6" rx="3" fill="#05122a"/><rect x="186" y="153" width="28" height="3" rx="1.5" fill="rgba(255,255,255,.55)"/></g><g class="cp"><rect x="24" y="44" width="76" height="26" rx="13" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.4)"/><text x="62" y="61" text-anchor="middle">Breaking</text></g><g class="cp"><rect x="24" y="100" width="83" height="26" rx="13" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.4)"/><text x="65" y="117" text-anchor="middle">Core Data</text></g><g class="cp"><rect x="267" y="40" width="109" height="26" rx="13" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.4)"/><text x="321" y="57" text-anchor="middle">iPhone + iPad</text></g><g class="cp"><rect x="260" y="96" width="116" height="26" rx="13" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.4)"/><text x="318" y="113" text-anchor="middle">Audio playback</text></g></svg></div>
     <h3><span class="pi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7a3 3 0 0 0 6 0zM19 7l-3 7a3 3 0 0 0 6 0z"/></svg></span>LiveLaw: Legal News App</h3>
-    <p class="stack">Swift | SwiftUI | Core Data | Firebase | WebEngage | <a href="https://apps.apple.com/us/app/livelaw/id910652359" rel="noopener">View on App Store →</a></p>
+    <p class="stack">Swift | SwiftUI | Core Data | Firebase | WebEngage | <a href="https://apps.apple.com/us/app/livelaw/id910652359" target="_blank" rel="noopener noreferrer">View on App Store →</a></p>
     <p>Sole iOS developer on a leading legal news app in India (iPhone and iPad): migrated the legacy Objective-C codebase to Swift, built a modern iPad experience, and added saved articles (Core Data), audio playback, analytics and push notifications.</p>
   </div>
   <div class="proj">
@@ -642,7 +646,7 @@ html{scrollbar-color:#1de9d8 transparent}
   <div class="proj">
     <div class="shot s5" aria-hidden="true"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid meet"><defs><filter id="sh5" x="-30%" y="-20%" width="160%" height="150%"><feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#020b1f" flood-opacity=".45"/></filter></defs><circle cx="48" cy="30" r="42" fill="rgba(255,255,255,.07)"/><circle cx="352" cy="140" r="52" fill="rgba(255,255,255,.07)"/><g transform="rotate(-9 150 100)" opacity=".85"><rect x="112" y="26" width="84" height="132" rx="14" fill="#0a1a33" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="118" y="32" width="72" height="120" rx="9" fill="rgba(255,255,255,.1)"/></g><g class="ph"><rect x="150" y="10" width="100" height="156" rx="18" fill="#0a1a33" stroke="rgba(255,255,255,.65)" stroke-width="2" filter="url(#sh5)"/><rect x="156" y="16" width="88" height="144" rx="12" fill="#f8fafc"/><rect x="156" y="30" width="88" height="30" fill="#0e7490"/><path d="m22 2-7 20-4-9-9-4zM22 2 11 13" transform="translate(166 35) scale(.8)" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="190" y="40" width="40" height="5" rx="2.5" fill="#fff"/><rect x="190" y="49" width="26" height="4" rx="2" fill="rgba(255,255,255,.6)"/><circle cx="172" cy="80" r="4" fill="#0e7490"/><circle cx="228" cy="80" r="4" fill="#f59e0b"/><path d="M178 80H222" stroke="#94a3b8" stroke-dasharray="3 4"/><rect x="164" y="94" width="40" height="5" rx="2.5" fill="#cbd5e1"/><rect x="164" y="104" width="28" height="5" rx="2.5" fill="#e2e8f0"/><g fill="#1f2933"><rect x="164" y="120" width="2" height="24"/><rect x="169" y="120" width="4" height="24"/><rect x="176" y="120" width="2" height="24"/><rect x="181" y="120" width="3" height="24"/><rect x="188" y="120" width="2" height="24"/><rect x="194" y="120" width="4" height="24"/><rect x="201" y="120" width="2" height="24"/><rect x="206" y="120" width="3" height="24"/><rect x="213" y="120" width="2" height="24"/><rect x="218" y="120" width="4" height="24"/><rect x="226" y="120" width="2" height="24"/><rect x="231" y="120" width="3" height="24"/></g><rect x="186" y="20" width="28" height="6" rx="3" fill="#05122a"/><rect x="186" y="153" width="28" height="3" rx="1.5" fill="rgba(255,255,255,.55)"/></g><g class="cp"><rect x="24" y="44" width="70" height="26" rx="13" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.4)"/><text x="59" y="61" text-anchor="middle">Flights</text></g><g class="cp"><rect x="24" y="100" width="63" height="26" rx="13" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.4)"/><text x="55" y="117" text-anchor="middle">Hotels</text></g><g class="cp"><rect x="300" y="40" width="76" height="26" rx="13" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.4)"/><text x="338" y="57" text-anchor="middle">Packages</text></g><g class="cp"><rect x="260" y="96" width="116" height="26" rx="13" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.4)"/><text x="318" y="113" text-anchor="middle">Multi-language</text></g></svg></div>
     <h3><span class="pi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4zM22 2 11 13"/></svg></span>Travel Booking Apps: Flights, Hotels &amp; Holiday Packages</h3>
-    <p class="stack">Swift | REST APIs | Localisation | <a href="https://apps.apple.com/us/app/qgo-online/id1479411985" rel="noopener">View QGO on App Store →</a></p>
+    <p class="stack">Swift | REST APIs | Localisation | <a href="https://apps.apple.com/us/app/qgo-online/id1479411985" target="_blank" rel="noopener noreferrer">View QGO on App Store →</a></p>
     <p>Built and shipped iOS apps for flight, hotel and holiday package booking, including QGO, with search and filters, traveller details flows, booking management and multi-language, multi-region support.</p>
   </div>
   </div>
@@ -650,7 +654,7 @@ html{scrollbar-color:#1de9d8 transparent}
 
 <section>
   <h2>Additional Apps Delivered</h2>
-  <p class="apps">Drift Cycle, Toodle, Bee Mobile, RHLTK, Laffah, FlashNgo, Gate 15, Umrah, CityBookers, Ejazza, ITBoarding, Fly TVs, Otolat, Fuuf, TravelQ8, Exlgo, Viaggisky, Musafren, Booking Kuwait, ETKTNOW, FlyBooking, Byengo, Re7lah, Metrip, Hinfly.</p>
+  <p class="apps"><span>Drift Cycle</span>, <span>Toodle</span>, <span>Bee Mobile</span>, <span>RHLTK</span>, <span>Laffah</span>, <span>FlashNgo</span>, <span>Gate 15</span>, <span>Umrah</span>, <span>CityBookers</span>, <span>Ejazza</span>, <span>ITBoarding</span>, <span>Fly TVs</span>, <span>Otolat</span>, <span>Fuuf</span>, <span>TravelQ8</span>, <span>Exlgo</span>, <span>Viaggisky</span>, <span>Musafren</span>, <span>Booking Kuwait</span>, <span>ETKTNOW</span>, <span>FlyBooking</span>, <span>Byengo</span>, <span>Re7lah</span>, <span>Metrip</span>, <span>Hinfly</span>.</p>
 </section>
 
 </div>
@@ -659,16 +663,16 @@ html{scrollbar-color:#1de9d8 transparent}
   <div class="card">
     <section id="skills">
       <h2>Technical Skills</h2><div class="skill-grid">
-      <div class="grp"><h4><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg></span>iOS Development</h4><div class="tags"><span>Swift</span><span>SwiftUI</span><span>UIKit</span><span>Objective-C</span><span>Cocoa Touch</span><span>async/await</span><span>Core Data</span><span>Push Notifications</span><span>Localisation</span><span>iPhone &amp; iPad UI</span></div></div>
-      <div class="grp"><h4><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 2.5 7.5 12 12.5l9.5-5z"/><path d="m2.5 12 9.5 5 9.5-5"/><path d="m2.5 16.5 9.5 5 9.5-5"/></svg></span>Architecture &amp; Testing</h4><div class="tags"><span>MVVM</span><span>Clean Architecture</span><span>REST APIs</span><span>Legacy Code Migration</span><span>Unit &amp; Integration Testing</span><span>Performance Optimisation</span></div></div>
-      <div class="grp"><h4><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13.5a4.5 4.5 0 0 0 6.4.4l3-3a4.5 4.5 0 0 0-6.4-6.4l-1.2 1.2"/><path d="M14 10.5a4.5 4.5 0 0 0-6.4-.4l-3 3a4.5 4.5 0 0 0 6.4 6.4l1.2-1.2"/></svg></span>Integrations &amp; SDKs</h4><div class="tags"><span>Stripe</span><span>Apple Pay</span><span>HyperPay</span><span>Firebase</span><span>Google Maps</span><span>WebRTC</span><span>VideoSDK</span><span>AppsFlyer</span><span>WebEngage</span><span>Alamofire</span></div></div>
-      <div class="grp"><h4><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6.5 7 11 10-5.5 5V2l5.5 5-11 10"/></svg></span>BLE, IoT &amp; Location</h4><div class="tags"><span>Core Bluetooth (BLE)</span><span>Core Location</span><span>IoT Integration</span><span>GPS / Location Services</span><span>Geofencing</span></div></div>
-      <div class="grp"><h4><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="13" height="9.5" rx="1.6"/><rect x="14" y="9.5" width="7.5" height="12" rx="1.6"/></svg></span>Cross-Platform</h4><div class="tags"><span>Flutter</span><span>Dart</span><span>Riverpod</span><span>React Native</span><span>TypeScript</span><span>Redux</span></div></div>
-      <div class="grp"><h4><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 17 6-6-6-6"/><path d="M12.5 19.5H20"/></svg></span>Tools &amp; CI/CD</h4><div class="tags"><span>Xcode</span><span>Fastlane</span><span>TestFlight</span><span>App Store Connect</span><span>Git</span><span>Bitbucket</span><span>Postman</span><span>Android Studio</span><span>VS Code</span><span>AI-Assisted Development</span><span>Prompt Engineering</span></div></div>
+      <div class="grp"><h4 aria-level="3"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg></span>iOS Development</h4><div class="tags"><span>Swift</span><span>SwiftUI</span><span>UIKit</span><span>Objective-C</span><span>Cocoa Touch</span><span>async/await</span><span>Core Data</span><span>Push Notifications</span><span>Localisation</span><span>iPhone &amp; iPad UI</span></div></div>
+      <div class="grp"><h4 aria-level="3"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 2.5 7.5 12 12.5l9.5-5z"/><path d="m2.5 12 9.5 5 9.5-5"/><path d="m2.5 16.5 9.5 5 9.5-5"/></svg></span>Architecture &amp; Testing</h4><div class="tags"><span>MVVM</span><span>Clean Architecture</span><span>REST APIs</span><span>Legacy Code Migration</span><span>Unit &amp; Integration Testing</span><span>Performance Optimisation</span></div></div>
+      <div class="grp"><h4 aria-level="3"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13.5a4.5 4.5 0 0 0 6.4.4l3-3a4.5 4.5 0 0 0-6.4-6.4l-1.2 1.2"/><path d="M14 10.5a4.5 4.5 0 0 0-6.4-.4l-3 3a4.5 4.5 0 0 0 6.4 6.4l1.2-1.2"/></svg></span>Integrations &amp; SDKs</h4><div class="tags"><span>Stripe</span><span>Apple Pay</span><span>HyperPay</span><span>Firebase</span><span>Google Maps</span><span>WebRTC</span><span>VideoSDK</span><span>AppsFlyer</span><span>WebEngage</span><span>Alamofire</span></div></div>
+      <div class="grp"><h4 aria-level="3"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6.5 7 11 10-5.5 5V2l5.5 5-11 10"/></svg></span>BLE, IoT &amp; Location</h4><div class="tags"><span>Core Bluetooth (BLE)</span><span>Core Location</span><span>IoT Integration</span><span>GPS / Location Services</span><span>Geofencing</span></div></div>
+      <div class="grp"><h4 aria-level="3"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="13" height="9.5" rx="1.6"/><rect x="14" y="9.5" width="7.5" height="12" rx="1.6"/></svg></span>Cross-Platform</h4><div class="tags"><span>Flutter</span><span>Dart</span><span>Riverpod</span><span>React Native</span><span>TypeScript</span><span>Redux</span></div></div>
+      <div class="grp"><h4 aria-level="3"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 17 6-6-6-6"/><path d="M12.5 19.5H20"/></svg></span>Tools &amp; CI/CD</h4><div class="tags"><span>Xcode</span><span>Fastlane</span><span>TestFlight</span><span>App Store Connect</span><span>Git</span><span>Bitbucket</span><span>Postman</span><span>Android Studio</span><span>VS Code</span><span>AI-Assisted Development</span><span>Prompt Engineering</span></div></div>
     </div></section>
     <section>
       <h2>Education</h2>
-      <h4>B.Tech in Computer Science and Engineering</h4>
+      <h4 aria-level="3">B.Tech in Computer Science and Engineering</h4>
       <p>College of Engineering, Adoor</p><p class="yr">2010 – 2014</p>
     </section>
     <section>
@@ -680,8 +684,8 @@ html{scrollbar-color:#1de9d8 transparent}
 </main>
 <section class="end" id="contact"><div class="end-in">
   <h2>Let&rsquo;s build something great</h2>
-  <p>Hiring a Senior iOS Developer? I&rsquo;d love to hear about your product and team.</p>
-  <div class="end-btns"><a class="btn primary" href="mailto:nikhilgeorgeoommen@gmail.com">Email me</a><a class="btn ghost" href="https://www.linkedin.com/in/nikhilgeorgeoommen" rel="noopener">Connect on LinkedIn</a></div>
+  <p>Hiring for a senior iOS role or planning a mobile product? I&rsquo;d love to hear about your team and your idea.</p>
+  <div class="end-btns"><a class="btn primary" href="mailto:nikhilgeorgeoommen@gmail.com">Email me</a><a class="btn ghost" href="https://www.linkedin.com/in/nikhilgeorgeoommen" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a></div>
 </div></section>
 <a class="totop" id="totop" href="#top" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg></a>
 <footer>Nikhil George Oommen · Senior iOS Developer · Updated November 2026</footer>
@@ -703,7 +707,7 @@ html{scrollbar-color:#1de9d8 transparent}
       if(!w){window.location.href=url;}
     }else{
       var a=document.createElement("a");
-      a.href=url;a.download=FILE;a.rel="noopener";
+      a.href=url;a.download=FILE;a.target="_blank" rel="noopener noreferrer";
       document.body.appendChild(a);a.click();a.remove();
     }
     setTimeout(function(){URL.revokeObjectURL(url);},60000);
