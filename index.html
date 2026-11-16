@@ -195,12 +195,12 @@ h1{font-size:clamp(2rem,7.4vw,3.7rem);letter-spacing:0}
   .projects{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
   .proj{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--teal-bright);border-radius:12px;padding:1.1rem 1.2rem;margin:0}
   .proj:first-child{grid-column:1/-1}
-  .job,.proj{transition:box-shadow .25s,translate .25s,border-color .25s}
-  .job:hover,.proj:hover{translate:0 -3px;box-shadow:0 12px 28px rgba(15,35,66,.12)}
+  .job,.proj{transition:box-shadow .25s,translate .25s,transform .15s ease-out,border-color .25s}
+  .job:hover,.proj:hover{box-shadow:0 18px 40px rgba(15,35,66,.18)}
 
   /* Scroll reveal (class added by script only when motion is allowed) */
-  .js .rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease,translate .25s,box-shadow .25s,border-color .25s}
-  .js .rv.in{opacity:1;transform:none}
+  .js .rv{opacity:0;translate:0 18px;transition:opacity .6s ease,translate .6s ease,transform .15s ease-out,box-shadow .25s,border-color .25s}
+  .js .rv.in{opacity:1;translate:0 0}
 
   /* Sticky top bar after scrolling past the header */
   .topbar{display:flex;position:fixed;top:0;left:0;right:0;z-index:40;align-items:center;gap:1.2rem;
@@ -261,17 +261,75 @@ h1{font-size:clamp(2rem,7.4vw,3.7rem);letter-spacing:0}
   .totop.show{opacity:1;visibility:visible;transform:none}
   .totop svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
   .end{max-width:var(--max);margin:0 auto 2rem;padding:0 clamp(1rem,4vw,2rem)}
-  .end-in{background:linear-gradient(135deg,#020b1f,#05204a 58%,#0b4a8f);border-radius:16px;padding:clamp(1.6rem,4vw,2.8rem);text-align:center;color:#dfe9f8}
+  .end-in{border:2px solid transparent;background:linear-gradient(135deg,#020b1f,#05204a 58%,#0b4a8f) padding-box,conic-gradient(from var(--a),#1de9d8,#1b8fe8,rgba(27,143,232,0) 40%,#1de9d8) border-box;animation:ang 7s linear infinite;border-radius:16px;padding:clamp(1.6rem,4vw,2.8rem);text-align:center;color:#dfe9f8}
   .end h2{justify-content:center;margin:0;color:#fff;font-size:clamp(1.2rem,3.4vw,1.8rem);letter-spacing:.02em;text-transform:none}
   .end h2::before,.end h2::after{display:none}
   .end p{margin:.4rem 0 0}
   .end-btns{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center;margin-top:1.3rem}
   .end .btn{margin:0;display:inline-flex;align-items:center;text-decoration:none;min-height:48px;padding:.6rem 1.5rem}
 }
+@property --a{syntax:"<angle>";inherits:false;initial-value:0deg}
+@keyframes ang{to{--a:360deg}}
+html{scrollbar-color:#1de9d8 transparent}
+::selection{background:#1de9d8;color:#03213a}
+@media screen{
+  .art{perspective:1100px}
+  .scene{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .25s ease-out}
+  .ring{position:absolute;left:0;top:0;border-radius:50%;border:1.5px dashed rgba(29,233,216,.38);transform-style:preserve-3d}
+  .r1{width:360px;height:360px;margin:-180px 0 0 -180px;animation:ringspin 22s linear infinite}
+  .r2{width:250px;height:250px;margin:-125px 0 0 -125px;border:1.5px solid rgba(255,255,255,.16);animation:ringspin 30s linear infinite reverse}
+  .ring::before{content:"";position:absolute;top:-6px;left:50%;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:#1de9d8;box-shadow:0 0 14px #1de9d8}
+  @keyframes ringspin{from{transform:rotateX(72deg) rotateZ(0)}to{transform:rotateX(72deg) rotateZ(360deg)}}
+  .phone3d{position:absolute;left:-80px;top:-160px;width:160px;height:320px;transform-style:preserve-3d;animation:sway 9s ease-in-out infinite alternate}
+  @keyframes sway{from{transform:rotateY(-26deg) rotateX(6deg)}to{transform:rotateY(18deg) rotateX(-2deg)}}
+  .ph-body{position:absolute;inset:0;border-radius:30px;background:#0a1a33;box-shadow:inset 0 0 0 3px #1de9d8,0 30px 60px rgba(0,0,0,.45),0 0 60px rgba(29,233,216,.25);transform:translateZ(8px)}
+  .ph-side{position:absolute;inset:0;border-radius:30px;background:#0e7d86;transform:translateZ(-8px);transform-style:preserve-3d}
+  .ph-side::before{content:"";position:absolute;inset:0;border-radius:inherit;background:#13a8b0;transform:translateZ(8px)}
+  .ph-notch{position:absolute;top:9px;left:50%;width:50px;height:6px;margin-left:-25px;border-radius:3px;background:#05204a;z-index:2}
+  .ph-screen{position:absolute;inset:16px 10px 12px;border-radius:20px;background:linear-gradient(160deg,#123a6b,#0b2347);overflow:hidden;padding:12px;display:grid;gap:8px;align-content:start}
+  .ph-screen i{display:block;height:34px;border-radius:10px;background:rgba(255,255,255,.1)}
+  .ph-screen .u1{height:58px;background:linear-gradient(135deg,#1de9d8,#1b8fe8)}
+  .ph-screen .u4{height:10px;width:60%;background:rgba(29,233,216,.6)}
+  .ph-ble{position:absolute;left:50%;bottom:16px;width:40px;height:40px;margin-left:-20px;border-radius:50%;background:linear-gradient(135deg,#1de9d8,#1b8fe8);display:grid;place-items:center;color:#03213a;animation:pulse 2.4s ease-out infinite}
+  .ph-ble svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(29,233,216,.55)}100%{box-shadow:0 0 0 18px rgba(29,233,216,0)}}
+  .chip3d{position:absolute;padding:.4rem .9rem;border-radius:999px;font-size:.8rem;font-weight:700;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);white-space:nowrap;animation:bob 5s ease-in-out infinite}
+  .chip3d.acc{color:#1de9d8;background:rgba(29,233,216,.16);border-color:rgba(29,233,216,.6)}
+  @keyframes bob{50%{translate:0 -12px}}
+  .c1{left:-165px;top:-110px;transform:translateZ(90px)}
+  .c2{left:85px;top:-30px;transform:translateZ(120px);animation-delay:-2s}
+  .c3{left:-150px;top:90px;transform:translateZ(110px);animation-delay:-1s}
+  .c4{left:80px;top:-150px;transform:translateZ(70px);animation-delay:-3s}
+  header::after{content:"";position:absolute;inset:0;background:radial-gradient(520px circle at var(--mx,72%) var(--my,28%),rgba(29,233,216,.13),transparent 55%);pointer-events:none}
+  .proj{position:relative}
+  .tilt{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
+  .proj.tilt{transform-style:preserve-3d}
+  .proj h3{transform-style:preserve-3d}
+  .proj.tilt .pi{transform:translateZ(26px)}
+  .proj::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(380px circle at var(--mx,50%) var(--my,50%),rgba(29,233,216,.16),transparent 45%);opacity:0;transition:opacity .25s;pointer-events:none}
+  .proj:hover::after{opacity:1}
+}
+@supports (animation-timeline:scroll()){
+  @media screen{
+    @keyframes parx{to{translate:0 70px;opacity:.15}}
+    .art .scene{animation:parx linear both;animation-timeline:scroll(root);animation-range:0 70vh}
+  }
+}
+@media screen{
+  .shot{margin:-1.1rem -1.2rem 1rem;height:132px;overflow:hidden;border-radius:9px 9px 0 0}
+  .shot svg{display:block;width:100%;height:100%;transition:scale .6s ease}
+  .proj:hover .shot svg{scale:1.06}
+  .shot .ph{animation:bob 6s ease-in-out infinite}
+  .shot text{font:700 11px Inter,Arial,sans-serif;fill:#fff}
+  .proj:first-child{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);column-gap:1.4rem;align-content:start}
+  .proj:first-child>*{grid-column:1}
+  .proj:first-child .shot{background:linear-gradient(135deg,#0b4a8f,#1de9d8);grid-column:2;grid-row:1/span 3;margin:-1.1rem -1.2rem -1.1rem 0;height:auto;min-height:190px;border-radius:0 9px 9px 0}
+}
+@media screen and (max-width:760px){.proj:first-child .shot{background:linear-gradient(135deg,#0b4a8f,#1de9d8)}.proj:first-child{display:block}.proj:first-child .shot{margin:-1.1rem -1.2rem 1rem;height:132px;min-height:0;border-radius:9px 9px 0 0}}
 @media screen and (max-width:700px){.totop{bottom:5.4rem}}
 @media screen and (prefers-reduced-motion:reduce){
   *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
-  .js .rv{opacity:1!important;transform:none!important}
+  .js .rv{opacity:1!important;translate:none!important}
 }
 
 @media print{
@@ -407,6 +465,7 @@ h1{font-size:clamp(2rem,7.4vw,3.7rem);letter-spacing:0}
   .side .grp{background:none!important;border:0!important;padding:0 0 1mm!important;margin:0 0 1.5mm!important}
   .side .grp h4{margin-bottom:.8mm!important}
   .tags span{font-size:6.9pt!important}
+  header::after,.shot{display:none!important}
 }
 </style>
 </head>
@@ -421,25 +480,18 @@ h1{font-size:clamp(2rem,7.4vw,3.7rem);letter-spacing:0}
 </div>
 <header id="top">
   <div class="art" aria-hidden="true">
-    <svg viewBox="0 0 400 440" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs><linearGradient id="ag" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1de9d8"/><stop offset="1" stop-color="#1b8fe8"/></linearGradient></defs>
-      <g class="orbit"><circle cx="200" cy="220" r="175" stroke="rgba(255,255,255,.12)"/><circle cx="200" cy="220" r="125" stroke="rgba(29,233,216,.3)" stroke-dasharray="4 9"/><circle cx="200" cy="45" r="6" fill="#1de9d8"/><circle cx="75" cy="220" r="5" fill="#1b8fe8"/></g>
-      <g class="phone">
-        <rect x="130" y="80" width="140" height="280" rx="26" fill="#0a1a33" stroke="url(#ag)" stroke-width="3"/>
-        <rect x="142" y="96" width="116" height="248" rx="16" fill="#0f2a52"/>
-        <rect x="174" y="88" width="52" height="6" rx="3" fill="#05204a"/>
-        <rect x="154" y="116" width="92" height="46" rx="10" fill="url(#ag)" opacity=".9"/>
-        <rect x="154" y="174" width="92" height="30" rx="8" fill="rgba(255,255,255,.1)"/>
-        <rect x="154" y="212" width="92" height="30" rx="8" fill="rgba(255,255,255,.1)"/>
-        <rect x="154" y="250" width="60" height="10" rx="5" fill="rgba(29,233,216,.6)"/>
-        <circle cx="200" cy="304" r="19" fill="url(#ag)"/>
-        <path d="m195 298 10 12-5 4v-20l5 4-10 12" stroke="#03213a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-      </g>
-      <g class="chip c1"><rect x="34" y="120" width="88" height="34" rx="17" fill="rgba(255,255,255,.1)" stroke="rgba(255,255,255,.28)"/><text x="78" y="142" text-anchor="middle" fill="#fff" font-size="13" font-weight="700" font-family="Inter,Arial,sans-serif">Swift</text></g>
-      <g class="chip c2"><rect x="286" y="190" width="92" height="34" rx="17" fill="rgba(255,255,255,.1)" stroke="rgba(255,255,255,.28)"/><text x="332" y="212" text-anchor="middle" fill="#fff" font-size="13" font-weight="700" font-family="Inter,Arial,sans-serif">SwiftUI</text></g>
-      <g class="chip c3"><rect x="40" y="296" width="82" height="34" rx="17" fill="rgba(29,233,216,.18)" stroke="rgba(29,233,216,.6)"/><text x="81" y="318" text-anchor="middle" fill="#1de9d8" font-size="13" font-weight="700" font-family="Inter,Arial,sans-serif">BLE</text></g>
-      <g class="chip c4"><rect x="282" y="84" width="96" height="34" rx="17" fill="rgba(29,233,216,.18)" stroke="rgba(29,233,216,.6)"/><text x="330" y="106" text-anchor="middle" fill="#1de9d8" font-size="13" font-weight="700" font-family="Inter,Arial,sans-serif">50+ apps</text></g>
-    </svg>
+    <div class="scene">
+      <div class="ring r1"></div><div class="ring r2"></div>
+      <div class="phone3d">
+        <div class="ph-side"></div>
+        <div class="ph-body">
+          <div class="ph-notch"></div>
+          <div class="ph-screen"><i class="u1"></i><i class="u2"></i><i class="u3"></i><i class="u4"></i>
+            <b class="ph-ble"><svg viewBox="0 0 24 24"><path d="m7 7 10 10-5 5V2l5 5L7 17"/></svg></b></div>
+        </div>
+      </div>
+      <span class="chip3d c1">Swift</span><span class="chip3d c2">SwiftUI</span><span class="chip3d c3 acc">BLE</span><span class="chip3d c4 acc">50+ apps</span>
+    </div>
   </div>
   <div class="wrap hero">
     <h1>Nikhil George Oommen</h1>
@@ -520,28 +572,33 @@ h1{font-size:clamp(2rem,7.4vw,3.7rem);letter-spacing:0}
   <h2>Key Projects</h2>
   <div class="projects">
   <div class="proj">
+    <div class="shot" aria-hidden="true"><svg viewBox="0 0 320 140" preserveAspectRatio="xMidYMid meet"><defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b4a8f"/><stop offset="1" stop-color="#1de9d8"/></linearGradient></defs><circle cx="40" cy="20" r="46" fill="rgba(255,255,255,.07)"/><circle cx="290" cy="120" r="56" fill="rgba(255,255,255,.07)"/><g class="ph"><rect x="116" y="16" width="88" height="150" rx="16" fill="#0a1a33" stroke="rgba(255,255,255,.55)" stroke-width="2"/><rect x="124" y="26" width="72" height="130" rx="9" fill="#0f2a52"/><path d="M130 120C150 90 170 112 186 62" stroke="#1de9d8" stroke-width="3" fill="none" stroke-dasharray="5 5"/><circle cx="130" cy="120" r="5" fill="#fff"/><circle cx="186" cy="62" r="7" fill="#1de9d8"/><rect x="132" y="36" width="56" height="10" rx="5" fill="rgba(255,255,255,.22)"/><rect x="134" y="128" width="52" height="14" rx="7" fill="#1de9d8"/></g><rect x="26" y="50" width="76" height="26" rx="13" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.35)"/><text x="64" y="67" text-anchor="middle">BLE unlock</text><rect x="236" y="84" width="62" height="26" rx="13" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.35)"/><text x="267" y="101" text-anchor="middle">4.9 ★</text></svg></div>
     <h3><span class="pi"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="17" r="3.5"/><circle cx="18.5" cy="17" r="3.5"/><path d="M5.5 17 9 8h5l4.500 9M9 8l3 9M13 5h3"/></svg></span>Bloom: BLE &amp; IoT Rental Management App</h3>
     <p class="stack">Swift 5 | Core Bluetooth | Core Location | Firebase | Google Maps | <a href="https://apps.apple.com/us/app/bloom-share-bikes-evs-more/id6736392137" rel="noopener">View on App Store →</a></p>
     <p>Sole iOS developer. Bike and e-scooter sharing app rated 4.9 on the App Store (1.7K ratings) and available in 14 languages: BLE and IoT unlocking, multi-rental support, geofenced zones, parking stations, reservations, payments and push notifications, with numerous Bluetooth bike and asset devices supported.</p>
   </div>
   <div class="proj">
+    <div class="shot" aria-hidden="true"><svg viewBox="0 0 320 140" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#05204a"/><stop offset="1" stop-color="#3b5bdb"/></linearGradient></defs><rect width="320" height="140" fill="url(#g2)"/><circle cx="40" cy="20" r="46" fill="rgba(255,255,255,.07)"/><circle cx="290" cy="120" r="56" fill="rgba(255,255,255,.07)"/><g class="ph"><rect x="116" y="16" width="88" height="150" rx="16" fill="#0a1a33" stroke="rgba(255,255,255,.55)" stroke-width="2"/><rect x="124" y="26" width="72" height="130" rx="9" fill="#0f2a52"/><rect x="130" y="34" width="60" height="32" rx="6" fill="#1b8fe8"/><rect x="130" y="72" width="60" height="6" rx="3" fill="rgba(255,255,255,.4)"/><rect x="130" y="84" width="48" height="6" rx="3" fill="rgba(255,255,255,.25)"/><rect x="130" y="100" width="60" height="22" rx="5" fill="rgba(255,255,255,.1)"/></g><rect x="24" y="46" width="70" height="26" rx="13" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.35)"/><text x="59" y="63" text-anchor="middle">Breaking</text><rect x="228" y="88" width="70" height="26" rx="13" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.35)"/><text x="263" y="105" text-anchor="middle">iPad + iPhone</text></svg></div>
     <h3><span class="pi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7a3 3 0 0 0 6 0zM19 7l-3 7a3 3 0 0 0 6 0z"/></svg></span>LiveLaw: Legal News App</h3>
     <p class="stack">Swift | SwiftUI | Core Data | Firebase | WebEngage | <a href="https://apps.apple.com/us/app/livelaw/id910652359" rel="noopener">View on App Store →</a></p>
     <p>Sole iOS developer on a leading legal news app in India (iPhone and iPad): migrated the legacy Objective-C codebase to Swift, built a modern iPad experience, and added saved articles (Core Data), audio playback, analytics and push notifications.</p>
   </div>
   <div class="proj">
+    <div class="shot" aria-hidden="true"><svg viewBox="0 0 320 140" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2b1a6b"/><stop offset="1" stop-color="#1b8fe8"/></linearGradient></defs><rect width="320" height="140" fill="url(#g3)"/><circle cx="40" cy="20" r="46" fill="rgba(255,255,255,.07)"/><circle cx="290" cy="120" r="56" fill="rgba(255,255,255,.07)"/><g class="ph"><rect x="116" y="16" width="88" height="150" rx="16" fill="#0a1a33" stroke="rgba(255,255,255,.55)" stroke-width="2"/><rect x="124" y="26" width="72" height="130" rx="9" fill="#0f2a52"/><rect x="130" y="34" width="60" height="46" rx="8" fill="#7c5cff"/><circle cx="160" cy="52" r="9" fill="rgba(255,255,255,.75)"/><rect x="130" y="86" width="28" height="20" rx="5" fill="#1de9d8"/><polyline points="130,122 146,122 152,112 160,132 168,116 174,122 190,122" stroke="#ff6b8a" fill="none" stroke-width="2.5"/></g><rect x="22" y="48" width="78" height="26" rx="13" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.35)"/><text x="61" y="65" text-anchor="middle">Video call</text><rect x="226" y="90" width="80" height="26" rx="13" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.35)"/><text x="266" y="107" text-anchor="middle">e-Prescription</text></svg></div>
     <h3><span class="pi"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="13" height="12" rx="2"/><path d="m15 10 7-4v12l-7-4z"/></svg></span>Hugo: Telehealth Platform</h3>
     <p class="stack">React Native | TypeScript | Redux | WebRTC | VideoSDK</p>
     <p>Video consultations, e-prescriptions and ordering, with real-time audio/video, biometric authentication, secure storage and offline support.</p>
   </div>
   <div class="proj">
+    <div class="shot" aria-hidden="true"><svg viewBox="0 0 320 140" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#064e3b"/><stop offset="1" stop-color="#1de9d8"/></linearGradient></defs><rect width="320" height="140" fill="url(#g4)"/><circle cx="40" cy="20" r="46" fill="rgba(255,255,255,.07)"/><circle cx="290" cy="120" r="56" fill="rgba(255,255,255,.07)"/><g class="ph"><rect x="116" y="16" width="88" height="150" rx="16" fill="#0a1a33" stroke="rgba(255,255,255,.55)" stroke-width="2"/><rect x="124" y="26" width="72" height="130" rx="9" fill="#0f2a52"/><circle cx="160" cy="70" r="28" stroke="rgba(255,255,255,.2)" stroke-width="8" fill="none"/><circle cx="160" cy="70" r="28" stroke="#7cf29a" stroke-width="8" fill="none" stroke-dasharray="118 176" stroke-linecap="round" transform="rotate(-90 160 70)"/><circle cx="160" cy="70" r="17" stroke="#1de9d8" stroke-width="6" fill="none" stroke-dasharray="70 107" stroke-linecap="round" transform="rotate(-90 160 70)"/><rect x="132" y="112" width="12" height="22" rx="3" fill="#7cf29a"/><rect x="152" y="104" width="12" height="30" rx="3" fill="#1de9d8"/><rect x="172" y="116" width="12" height="18" rx="3" fill="#7cf29a"/></g><rect x="26" y="52" width="64" height="26" rx="13" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.35)"/><text x="58" y="69" text-anchor="middle">Flutter</text><rect x="234" y="86" width="62" height="26" rx="13" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.35)"/><text x="265" y="103" text-anchor="middle">Wellness</text></svg></div>
     <h3><span class="pi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19C5 9 11 4 20 4c0 9-5 15-15 15zM5 19l8-8"/></svg></span>Nuevo: Health &amp; Wellness App</h3>
     <p class="stack">Flutter | Dart | Riverpod | Dio | GoRouter | Mockito</p>
     <p>Scalable Clean Architecture app with Riverpod state management, REST APIs and unit-tested code.</p>
   </div>
   <div class="proj">
+    <div class="shot" aria-hidden="true"><svg viewBox="0 0 320 140" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0e7490"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="320" height="140" fill="url(#g5)"/><circle cx="40" cy="20" r="46" fill="rgba(255,255,255,.07)"/><circle cx="290" cy="120" r="56" fill="rgba(255,255,255,.07)"/><path d="M14 112Q90 8 300 36" stroke="rgba(255,255,255,.7)" stroke-dasharray="4 6" fill="none" stroke-width="2"/><path d="m296 24 18 6-8 12-4-7z" fill="#fff"/><g class="ph"><rect x="116" y="16" width="88" height="150" rx="16" fill="#0a1a33" stroke="rgba(255,255,255,.55)" stroke-width="2"/><rect x="124" y="26" width="72" height="130" rx="9" fill="#0f2a52"/><rect x="130" y="34" width="60" height="50" rx="7" fill="rgba(255,255,255,.14)"/><rect x="136" y="42" width="30" height="6" rx="3" fill="#fff"/><rect x="136" y="54" width="48" height="5" rx="2.500" fill="rgba(255,255,255,.5)"/><g fill="#fff" opacity=".8"><rect x="136" y="68" width="2" height="10"/><rect x="141" y="68" width="4" height="10"/><rect x="148" y="68" width="2" height="10"/><rect x="153" y="68" width="3" height="10"/><rect x="160" y="68" width="2" height="10"/><rect x="166" y="68" width="4" height="10"/></g></g><rect x="24" y="92" width="66" height="26" rx="13" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.35)"/><text x="57" y="109" text-anchor="middle">Flights</text><rect x="232" y="50" width="66" height="26" rx="13" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.35)"/><text x="265" y="67" text-anchor="middle">Hotels</text></svg></div>
     <h3><span class="pi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4zM22 2 11 13"/></svg></span>Travel Booking Apps: Flights, Hotels &amp; Holiday Packages</h3>
-    <p class="stack">Swift | REST APIs | Localisation | <a href="https://apps.apple.com/us/app/qgo-online/id1479411985" rel="noopener">View on App Store →</a></p>
+    <p class="stack">Swift | REST APIs | Localisation | <a href="https://apps.apple.com/us/app/qgo-online/id1479411985" rel="noopener">View QGO on App Store →</a></p>
     <p>Built and shipped iOS apps for flight, hotel and holiday package booking, including QGO, with search and filters, traveller details flows, booking management and multi-language, multi-region support.</p>
   </div>
   </div>
@@ -617,7 +674,8 @@ h1{font-size:clamp(2rem,7.4vw,3.7rem);letter-spacing:0}
   var th=d.getElementById('theme');
   if(th)th.addEventListener('click',function(){
     var cur=root.getAttribute('data-theme'),dark=cur?cur==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches,n=dark?'light':'dark';
-    root.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}
+    function apply(){root.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}}
+    if(d.startViewTransition&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches)d.startViewTransition(apply);else apply();
   });
   var tr=d.querySelector('.mq-track');if(tr)tr.innerHTML+=tr.innerHTML;
   var pg=d.getElementById('progress'),tt=d.getElementById('totop'),tick=false;
@@ -629,6 +687,28 @@ h1{font-size:clamp(2rem,7.4vw,3.7rem);letter-spacing:0}
   }
   window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(onScroll);}},{passive:true});
   onScroll();
+  var fine=window.matchMedia&&matchMedia('(hover:hover) and (pointer:fine)').matches,calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(fine&&!calm){
+    var hd=d.querySelector('header'),sc=d.querySelector('.scene');
+    if(hd){
+      hd.addEventListener('pointermove',function(e){
+        var r=hd.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+        hd.style.setProperty('--mx',(x*100)+'%');hd.style.setProperty('--my',(y*100)+'%');
+        if(sc){sc.style.setProperty('--ry',((x-.5)*28)+'deg');sc.style.setProperty('--rx',((.5-y)*18)+'deg');}
+      });
+      hd.addEventListener('pointerleave',function(){if(sc){sc.style.setProperty('--ry','0deg');sc.style.setProperty('--rx','0deg');}});
+    }
+    d.querySelectorAll('.proj,.job,.side .grp').forEach(function(el){
+      var max=el.classList.contains('proj')?6:el.classList.contains('job')?2.2:3;
+      el.classList.add('tilt');
+      el.addEventListener('pointermove',function(e){
+        var r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+        el.style.setProperty('--ry',((x-.5)*2*max)+'deg');el.style.setProperty('--rx',((.5-y)*2*max)+'deg');
+        el.style.setProperty('--mx',(x*100)+'%');el.style.setProperty('--my',(y*100)+'%');
+      });
+      el.addEventListener('pointerleave',function(){el.style.setProperty('--rx','0deg');el.style.setProperty('--ry','0deg');});
+    });
+  }
   if(!('IntersectionObserver' in window))return;
   var tb=d.getElementById('topbar'),hdr=d.querySelector('header');
   if(tb&&hdr){
