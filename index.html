@@ -349,6 +349,39 @@ html{scrollbar-color:#1de9d8 transparent}
   .apps span{font-size:.85rem;font-weight:600;margin:0 .5rem .5rem 0;padding:.3rem .8rem;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--head);transition:border-color .2s,background .2s}
   .apps span:hover{border-color:var(--teal-bright);background:var(--tint)}
 }
+@media screen{
+  body{font-feature-settings:"cv11","ss01";font-optical-sizing:auto}
+  .aurora{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+  .aurora i{position:absolute;border-radius:50%;filter:blur(80px);mix-blend-mode:screen}
+  .aurora i:nth-child(1){width:min(520px,60vw);aspect-ratio:1;right:6%;top:-25%;background:#1b8fe8;opacity:.5;animation:au1 20s ease-in-out infinite alternate}
+  .aurora i:nth-child(2){width:min(440px,55vw);aspect-ratio:1;left:30%;bottom:-45%;background:#7c5cff;opacity:.28;animation:au2 24s ease-in-out infinite alternate}
+  .aurora i:nth-child(3){width:min(360px,50vw);aspect-ratio:1;right:28%;top:30%;background:#1de9d8;opacity:.16;animation:au1 26s ease-in-out -8s infinite alternate-reverse}
+  @keyframes au1{to{translate:-9vw 7vh;scale:1.15}}
+  @keyframes au2{to{translate:7vw -6vh;scale:1.2}}
+  .hero>h1{animation:none}
+  .w{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .03em .14em;margin-bottom:-.14em}
+  .w>span{display:inline-block;transform:translateY(108%);animation:wup .95s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--i)*110ms + 150ms)}
+  @keyframes wup{to{transform:none}}
+  .btn{transition:background .2s,translate .2s ease-out}
+  .btn.primary{position:relative;overflow:hidden}
+  .btn.primary::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:shine 5.5s ease-in-out infinite;pointer-events:none}
+  @keyframes shine{0%,62%{left:-60%}100%{left:130%}}
+  .ph-body::after{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(120deg,transparent 40%,rgba(255,255,255,.13) 50%,transparent 60%);background-size:250% 100%;animation:sheen 6s ease-in-out infinite;pointer-events:none}
+  @keyframes sheen{from{background-position:150% 0}to{background-position:-50% 0}}
+  .marquee.rev{margin-top:-.5rem}
+  .marquee.rev .mq-track{animation-direction:reverse;animation-duration:55s}
+  .js .main h2.rv::after{transform:scaleX(0);transform-origin:left;transition:transform 1s cubic-bezier(.2,.7,.2,1) .25s}
+  .js .main h2.rv.in::after{transform:scaleX(1)}
+  .js .side .grp .tags span{opacity:0}
+  .js .side .grp.in .tags span{opacity:1;animation:tagin .5s ease both;animation-delay:calc(var(--i,0)*35ms + 120ms)}
+  @keyframes tagin{from{opacity:0;translate:0 8px}}
+}
+@supports (animation-timeline:scroll()){
+  @media screen{
+    @keyframes heroout{to{opacity:.2;translate:0 -28px}}
+    .hero{animation:heroout linear both;animation-timeline:scroll(root);animation-range:0 55vh}
+  }
+}
 @media screen and (max-width:700px){.totop{bottom:5.4rem}}
 @media screen and (prefers-reduced-motion:reduce){
   *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
@@ -488,7 +521,7 @@ html{scrollbar-color:#1de9d8 transparent}
   .side .grp{background:none!important;border:0!important;padding:0 0 1mm!important;margin:0 0 1.5mm!important}
   .side .grp h4{margin-bottom:.8mm!important}
   .tags span{font-size:6.9pt!important}
-  header::after,.shot,.web-only{display:none!important}
+  header::after,.shot,.web-only,.aurora{display:none!important}
 }
 </style>
 </head>
@@ -502,6 +535,7 @@ html{scrollbar-color:#1de9d8 transparent}
   <a class="btn primary" data-pdf href="Nikhil_George_Oommen_Resume.pdf" download="Nikhil_George_Oommen_Resume.pdf">Download Resume</a>
 </div>
 <header id="top">
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="art" aria-hidden="true">
     <div class="scene">
       <div class="ring r1"></div><div class="ring r2"></div>
@@ -539,6 +573,7 @@ html{scrollbar-color:#1de9d8 transparent}
 <nav class="bar" aria-label="Quick contact"><a href="tel:+919496410914">Call</a><a href="mailto:nikhilgeorgeoommen@gmail.com">Email</a><a href="https://www.linkedin.com/in/nikhilgeorgeoommen" target="_blank" rel="noopener noreferrer">LinkedIn</a></nav>
 
 <div class="marquee" aria-hidden="true"><div class="mq-track"><span><i class="devicon-swift-plain colored"></i>Swift</span><span><i class="devicon-apple-original"></i>SwiftUI</span><span><i class="devicon-objectivec-plain"></i>Objective-C</span><span><i class="devicon-flutter-plain colored"></i>Flutter</span><span><i class="devicon-react-original colored"></i>React Native</span><span><i class="devicon-dart-plain colored"></i>Dart</span><span><i class="devicon-typescript-plain colored"></i>TypeScript</span><span><i class="devicon-firebase-plain colored"></i>Firebase</span><span><i class="devicon-xcode-plain colored"></i>Xcode</span><span><i class="devicon-git-plain colored"></i>Git</span><span><i class="devicon-postman-plain colored"></i>Postman</span><span><i class="devicon-bitbucket-original colored"></i>Bitbucket</span><span>Core Bluetooth</span><span>Fastlane</span><span>Stripe</span><span>MVVM</span><span>Clean Architecture</span></div></div>
+<div class="marquee rev" aria-hidden="true"><div class="mq-track"><span>Core Data</span><span>Core Bluetooth</span><span>Core Location</span><span>Fastlane</span><span>Stripe</span><span>Apple Pay</span><span>HyperPay</span><span>WebRTC</span><span>AppsFlyer</span><span>WebEngage</span><span>MVVM</span><span>Clean Architecture</span><span>Riverpod</span><span>REST APIs</span></div></div>
 
 <main class="layout" id="content">
 <div class="main">
@@ -715,7 +750,7 @@ html{scrollbar-color:#1de9d8 transparent}
     function apply(){root.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}}
     if(d.startViewTransition&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches)d.startViewTransition(apply);else apply();
   });
-  var tr=d.querySelector('.mq-track');if(tr)tr.innerHTML+=tr.innerHTML;
+  d.querySelectorAll('.mq-track').forEach(function(t){t.innerHTML+=t.innerHTML;});
   var pg=d.getElementById('progress'),tt=d.getElementById('totop'),tick=false;
   function onScroll(){
     var h=root.scrollHeight-window.innerHeight,y=window.scrollY;
@@ -727,6 +762,12 @@ html{scrollbar-color:#1de9d8 transparent}
   window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(onScroll);}},{passive:true});
   onScroll();
   var fine=window.matchMedia&&matchMedia('(hover:hover) and (pointer:fine)').matches,calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var h1=d.querySelector('h1');
+  if(h1&&!calm){
+    var words=h1.textContent.trim().split(/\s+/);
+    h1.setAttribute('aria-label',words.join(' '));
+    h1.innerHTML=words.map(function(w,i){return '<span class="w" aria-hidden="true"><span style="--i:'+i+'">'+w+'</span></span>';}).join(' ');
+  }
   if(fine&&!calm){
     var hd=d.querySelector('header'),sc=d.querySelector('.scene');
     if(hd){
@@ -748,6 +789,12 @@ html{scrollbar-color:#1de9d8 transparent}
       el.addEventListener('pointerleave',function(){el.style.setProperty('--rx','0deg');el.style.setProperty('--ry','0deg');});
     });
   }
+  if(fine&&!calm){
+    d.querySelectorAll('.hero .btn.primary,.end .btn.primary').forEach(function(bt){
+      bt.addEventListener('pointermove',function(e){var r=bt.getBoundingClientRect();bt.style.translate=((e.clientX-r.left-r.width/2)*.12)+'px '+((e.clientY-r.top-r.height/2)*.2)+'px';});
+      bt.addEventListener('pointerleave',function(){bt.style.translate='';});
+    });
+  }
   if(!('IntersectionObserver' in window))return;
   var tb=d.getElementById('topbar'),hdr=d.querySelector('header');
   if(tb&&hdr){
@@ -761,7 +808,8 @@ html{scrollbar-color:#1de9d8 transparent}
   var io=new IntersectionObserver(function(es){
     es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});
   },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
-  d.querySelectorAll('.summary,.job,.proj,.apps,.side .grp,.end-in,.ex,.domains').forEach(function(el){el.classList.add('rv');io.observe(el);});
+  d.querySelectorAll('.summary,.job,.proj,.apps,.side .grp,.end-in,.ex,.domains,.main h2').forEach(function(el){el.classList.add('rv');io.observe(el);});
+  d.querySelectorAll('.side .grp').forEach(function(g){g.querySelectorAll('.tags span').forEach(function(t,i){t.style.setProperty('--i',i);});});
 })();
 </script>
 </body>
